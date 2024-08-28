@@ -1,0 +1,49 @@
+/*------menu-------- */
+.navigation .menu {
+    display: flex;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 99px;
+}
+
+.navigation .menu li {
+    border-right: solid 2px #777;
+}
+
+.navigation .menu li:last-child {
+    border-right: none;
+    /* 把最後一個的右邊|拔掉 */
+}
+
+.navigation .menu a {
+
+    margin: 0 10px;
+    font-size: .9rem;
+    line-height: 1;
+    /* 控制|的高度，寫1就是16px */
+    border-bottom: solid 2px transparent;
+    /* transparent為透明 */
+    transition: 0.35s;
+
+}
+
+.navigation .menu a:hover {
+    border-bottom: solid 2px #777;
+}
+
+
+
+#contact {
+
+    position: relative;
+    overflow: hidden;
+    
+    /* 設定背景圖 */
+    background-image: url(../images/bg_contact.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    padding: 20px;
+}

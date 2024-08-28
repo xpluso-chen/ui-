@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Masking</title>
+    <style>
+        .wrapper {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+
+        .container,
+        .under {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .container{
+            z-index: 10;
+        }
+        .under {
+            z-index: 9;
+        }
+        .masked-image {
+            width: 100%;
+            height: auto;
+            clip-path: url(#clipShape);
+        }
+
+        /* 讓圖片在不同視窗大小時自適應 */
+        .container-staw {
+            width: 100%;
+            height: 0;
+            /* padding-bottom: 100%; */
+            /* 根據需要調整比例 */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- 遮色片 -->
+        <div class="container">
+            <svg id="container-staw">
+                <defs>
+                    <clipPath id="clipShape">
+                        <path
+                            d="M280.765 109.352C268.266 91.1433 242.543 81.0958 217.198 75.5355C219.24 74.3974 221.217 73.2268 223.044 72.04C245.968 57.0987 247.368 30.7605 247.368 30.7605C247.368 30.7605 231.641 27.0048 193.369 44.9864C184.921 48.9534 178.564 53.7008 173.755 58.692C174.678 54.5624 175.221 50.1402 175.221 45.4253C175.221 18.9408 149.448 0 149.448 0C149.448 0 123.363 17.0711 123.363 45.1327C123.363 49.62 123.775 53.7983 124.483 57.6678C119.822 53.0667 113.778 48.6932 105.923 45.0026C67.6512 27.0211 51.9242 30.7767 51.9242 30.7767C51.9242 30.7767 53.324 57.115 76.2476 72.0562C78.1579 73.2919 80.1835 74.495 82.3079 75.6656C57.1281 81.2421 31.6519 91.2734 19.2514 109.369C-9.96306 151.916 1.31761 220.136 6.71916 248.051C12.7465 279.185 55.366 399.87 149.992 400C244.618 399.87 287.237 279.185 293.265 248.051C298.683 220.136 309.963 151.916 280.765 109.352Z"
+                            fill="url(#paint0_linear_1646_1063)" />
+                    </clipPath>
+                </defs>
+            </svg>
+
+            <img src="./milkshake.jpg" alt="Masked Image" class="masked-image">
+        </div>
+
+        <!-- 彩色草莓底 -->
+        <div class="under">
+            <img src="./frame-straw.svg" alt="Frame Image">
+        </div>
+    </div>
+
+</body>
+
+</html>

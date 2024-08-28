@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>單一元素空間不足分配收縮比例</title>
+	<style>
+		*{ margin: 0;padding: 0; box-sizing: border-box;}
+		article{
+			background-color: #bbb;
+			width: 400px;
+			height: 220px;
+			display: flex; 
+		}
+		article div{ 
+			/* height: 100px; */
+			/* 如果沒設定就是預設延展 */
+		}
+		article div:nth-child(1){
+			background-color: rgb(165, 165, 255);
+			flex:1;
+			
+		}
+		article div:nth-child(2){
+			background-color: rgb(161, 208, 177);
+			flex:1;
+		}
+		article div:nth-child(3){
+			background-color: rgb(250, 153, 153);
+			flex:1;
+		}
+	</style>
+</head>
+<body>
+	<article>
+		<div>aa</div>
+		<div>bb</div>
+		<div>cc</div>
+	</article>
+
+
+
+</body>
+</html>

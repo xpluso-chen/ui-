@@ -1,0 +1,64 @@
+body {
+    /* 無外框間距 */
+    margin: 0;
+
+    /* 無接縫背景，一個圖重複填滿 */
+    background-image: url(./images/bg.jpg);
+
+    /* 鎖定字級 */
+    font-size: 18px;
+}
+
+img {
+    /* 去掉圖片間距 */
+    display: block;
+}
+
+
+/* 設定class box整個內容區塊尺寸&至中 */
+.box {
+    width: 1000px;
+    margin: 0 auto;
+    /*自動偵測必須搭配寬度 */
+}
+
+/* 設定按鈕位置為水平並排 */
+.btn {
+    float: left;
+    /* float為浮動區塊 */
+}
+
+/* 設定內容區位置為水平並排 */
+.col {
+    font-size: 14px;
+    float: left;
+    /* float為浮動區塊 */
+    /* 因文字沒有尺寸，預設是自動填滿空間，所以已經塞不下沒有空間可以並排>>需要額外設定寬度 */
+    width: 446px;
+    border: dotted 2px #400101;
+    margin: 10px;
+    padding: 15px;
+}
+.col span{
+    color: aqua;
+    /* span用於自定義樣式 */
+}
+hr{
+    border: 1px #400101 solid;
+    /* 分格線 */
+}
+iframe{
+display: block;
+margin: auto;
+
+}
+
+.footer {
+    clear: both;
+    /* 如果float後面的東東沒有要float的話，就用這個方法 */
+    text-align: center;
+    border-top: dotted 2px #400101;
+    padding: 10px;
+    /* 只有行內元素才能調距離 */
+
+}

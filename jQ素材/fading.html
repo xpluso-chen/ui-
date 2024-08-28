@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery淡出淡入效果</title>
+    <style>
+        div {
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            line-height: 150px;
+            font-size: 20px;
+        }
+
+        #box1 {
+            display: none;
+            background-color: aquamarine;
+        }
+
+        #box2 {
+            background-color: rgb(230, 195, 253);
+        }
+
+        #box3 {
+            background-color: rgb(186, 189, 255);
+        }
+
+        #box4 {
+            background-color: rgb(200, 255, 127);
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- div#box$*4 -->
+    <div id="box1">fadeIn淡入</div>
+    <div id="box2">fadeOut淡出</div>
+    <div id="box3">fadeToggle交替</div>
+    <div id="box4">fadeTo淡至</div>
+
+    <button>按我</button>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+
+            $('button').click(function () {
+                $('#box1').fadeIn("fast");
+                $('#box2').fadeOut();
+                $('#box3').fadeToggle(2000);
+                $('#box4').fadeTo('',.4);//透明度
+            });
+        });
+
+// 控制時間:"slow"、"fast"、秒數(預設0.04秒)
+// fadeTo()較不易與fadeOut()衝突，故比fadeIn常用
+
+
+    </script>
+
+
+</body>
+
+</html>

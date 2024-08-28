@@ -1,0 +1,6 @@
+@use "_variable" as *;//調用局部
+@import "_reset.scss";//調用全部
+
+.footer {
+    margin: map-get($interval, s);
+}

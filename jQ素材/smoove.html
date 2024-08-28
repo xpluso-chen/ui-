@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滾動載入動畫</title>
+
+    <style>
+        header {
+            height: 100vh;
+            background: #FFB11B;
+            font-size: 3rem;
+            color: white;
+            text-align: center;
+            /* 水平致中 */
+            line-height: 100vh;
+            /* 在指定高度中至中*/
+        }
+        footer {
+            height: 30vh;
+            background: #FFB11B;
+            font-size: 3rem;
+            color: white;
+            text-align: center;
+            line-height: 30vh;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .col {
+            flex: 1;
+            /* 主軸均分，目前是水平W均分 */
+            height: 300px;
+            margin: 15px;
+            background-color: #ED784A;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <header>BANNER</header>
+    <main>
+        <!-- 預設淡入淡出 -->
+        <div class="row">
+            
+            <div class="col smoove"></div>
+            <div class="col smoove"></div>
+        </div>
+
+        <!-- 旋轉載入 -->
+        <div class="row">
+            <div class="col smoove" data-move-x="-120%" data-rotate="90deg"></div>
+            <div class="col smoove" data-move-x="-600%" data-rotate="45deg" data-move-x="100px"></div>
+            <div class="col smoove" data-move-x="120%" data-rotate="-90deg"></div>
+        </div>
+
+        <!-- 左右載入 -->
+        <div class="row">
+            <div class="col smoove" data-move-x="-200px" data-move-y="100px"></div>
+            <div class="col smoove" data-move-x="-100px" data-move-y="100px"></div>
+            <div class="col smoove" data-move-x="100px" data-move-y="100px"></div>
+            <div class="col smoove" data-move-x="200px" data-move-y="100px"></div>
+        </div>
+        <!-- 開門載入 -->
+        <div class="row">
+            <div class="col smoove" data-move-x="-120%" data-rotate-y="90deg"></div>
+            <div class="col smoove" data-move-x="150%" data-rotate-y="-90deg"></div>
+        </div>
+        <!-- 透視翻轉起立載入 -->
+        <div class="row smoove smoove-z">
+            <!-- 子元素同特效，故寫在父元素 -->
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+
+
+
+
+    </main>
+
+    <footer>Footer</footer>
+    <!-- JQuery是幫妳寫CSS的套件，需要靠script啟動 -->
+    <!-- JQuery官方CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- JQuery Smoove -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+
+<script>
+    $('.smoove').smoove({
+        offset:'40%'
+        // 滑到40%就開始出現
+    });
+
+
+$('.smoove-z').smoove({
+        moveZ:'-500px',rotateX:'99deg',moveY:'250px'
+        // 從z軸-500位置出來
+    });
+
+
+
+</script>
+
+
+</body>
+
+</html>
