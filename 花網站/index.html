@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>芮塔花室</title>
+    <link rel="icon" href="favicon.ico">
+    <!-- link 為以防萬一(手動加的) -->
+    <link rel="stylesheet" href="./css/carousel.css"> <!-- 換圖輪播 -->
+
+    <link rel="stylesheet" href="./css/style.css"><!-- 所有自訂CSS -->
+
+</head>
+
+<body>
+    <header id="topbar">
+        <h1 class="logo">
+            <!-- LOGO區 -->
+            <a href="./index.html"><img src="./images/logo_b.svg" alt="芮塔花室LOGO"></a>
+        </h1>
+
+
+        <div class="navbar">
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- 選單區 -->
+            <nav class="navigation">
+
+                <ul class="icon">
+                    <li><a class="icon-fb" href="#"></a></li>
+                    <li><a class="icon-ig" href="#"></a></li>
+                    <li><a class="icon-line" href="#"></a></li>
+                    <li><a class="btn-login" href="./login.html">login</a></li>
+                </ul>
+
+                <ul class="menu">
+                    <li><a href="#banner">HOME</a></li>
+                    <li><a href="#news">NEWS</a></li>
+                    <li><a href="#service">SERVICE</a></li>
+                    <li><a href="#video">VIDEO</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                    <li><a href="page.html#page">PAGE</a></li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="banner ">
+            <div class="content-slider">
+                <!-- 給js用的切換器，在CSS中設定成前台不顯示 -->
+                <input type="radio" id="banner1" class="sec-1-input" name="banner" checked>
+                <input type="radio" id="banner2" class="sec-1-input" name="banner">
+                <input type="radio" id="banner3" class="sec-1-input" name="banner">
+                <input type="radio" id="banner4" class="sec-1-input" name="banner">
+                <input type="radio" id="banner4" class="sec-1-input" name="banner">
+
+                <div class="slider">
+                    <div id="top-banner-1" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>Creative Template</h2>
+                            <h1>Welcome<br>to MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#section-2">Learn More</a></div>
+                        </div>
+                    </div>
+                    <div id="top-banner-2" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>What We Do</h2>
+                            <h1>Great<br>MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#section-4">Learn More</a></div>
+                        </div>
+                    </div>
+                    <div id="top-banner-3" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>Here We Are</h2>
+                            <h1>We Are<br>MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#section-6">Learn More</a></div>
+                        </div>
+                    </div>
+                    <div id="top-banner-4" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>Our Contacts</h2>
+                            <h1>Welcome<br>to MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#main-footer">Learn More</a></div>
+                        </div>
+                    </div>
+                    <div id="top-banner-5" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>Our Contacts</h2>
+                            <h1>Welcome<br>to MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#main-footer">Learn More</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 前台給使用者的輪播提示器->進度條 -->
+                <nav>
+                    <div class="controls">
+                        <label for="banner1"><span class="progressbar"><span
+                                    class="progressbar-fill"></span></span></label>
+                        <label for="banner2"><span class="progressbar"><span
+                                    class="progressbar-fill"></span></span></label>
+                        <label for="banner3"><span class="progressbar"><span
+                                    class="progressbar-fill"></span></span></label>
+                        <label for="banner4"><span class="progressbar"><span
+                                    class="progressbar-fill"></span></span></label>
+                        <label for="banner5"><span class="progressbar"><span
+                                    class="progressbar-fill"></span></span></label>
+                    </div>
+                </nav>
+            </div>
+        </section>
+        <!--  -->
+        <section id="news">
+            <header class="title">
+                <h2>NEWS</h2>
+                <h3>最新消息</h3>
+            </header>
+            <div class="box__list">
+                <article class="item">
+                    <a href="#">
+                        <figure><img src="images/pt_news1.jpg" alt=""></figure>
+                        <div class="content">
+                            <h1>NEWS TITLE</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quisquam iste ea nemo
+                                dicta placeat hic harum ipsum nihil excepturi, dolore accusantium ad nam nesciunt
+                                maiores, at voluptatem facilis beatae tenetur sapiente. Unde, vero veritatis est
+                                dolorem, soluta quos explicabo facilis aliquam, id in dolor reprehenderit voluptas
+                                blanditiis delectus sequi?</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="item">
+                    <a href="#">
+                        <figure><img src="images/pt_news2.jpg" alt=""></figure>
+                        <div class="content">
+                            <h1>NEWS TITLE</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quisquam iste ea nemo
+                                dicta placeat hic harum ipsum nihil excepturi, dolore accusantium ad nam nesciunt
+                                maiores, at voluptatem facilis beatae tenetur sapiente. Unde, vero veritatis est
+                                dolorem, soluta quos explicabo facilis aliquam, id in dolor reprehenderit voluptas
+                                blanditiis delectus sequi?</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="item">
+                    <a href="#">
+                        <figure><img src="images/pt_news3.jpg" alt=""></figure>
+                        <div class="content">
+                            <h1>NEWS TITLE</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quisquam iste ea nemo
+                                dicta placeat hic harum ipsum nihil excepturi, dolore accusantium ad nam nesciunt
+                                maiores, at voluptatem facilis beatae tenetur sapiente. Unde, vero veritatis est
+                                dolorem, soluta quos explicabo facilis aliquam, id in dolor reprehenderit voluptas
+                                blanditiis delectus sequi?</p>
+                        </div>
+                    </a>
+                </article>
+            </div>
+            <a class="btn-s" href="#">more</a>
+
+        </section>
+        <!--  -->
+        <section id="service">
+            <header class="title">
+                <h2>SERVICE</h2>
+                <h3>服務項目</h3>
+            </header>
+            <ul class="box__list">
+                <li class="item svc-1">
+                    <a href="#" class="content">
+                        <h1>SERVICE TITLE</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dicta eligendi dignissimos
+                            minima unde accusantium, facere ea eius corporis voluptas, ratione nam fuga maxime
+                            distinctio. Inventore reiciendis nemo earum. Dolorum.</p>
+                    </a>
+                </li>
+                <li class="item svc-2">
+                    <a href="#" class="content">
+                        <h1>SERVICE TITLE</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati pariatur at, earum
+                            praesentium unde voluptatibus dolore porro. Est maiores sint veniam aliquam consectetur.
+                            Velit minus magnam dicta ut earum suscipit.</p>
+                    </a>
+                </li>
+                <li class="item svc-3">
+                    <a href="#" class="content">
+                        <h1>SERVICE TITLE</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati pariatur at, earum
+                            praesentium unde voluptatibus dolore porro. Est maiores sint veniam aliquam consectetur.
+                            Velit minus magnam dicta ut earum suscipit.</p>
+                    </a>
+                </li>
+                <li class="item svc-4">
+                    <a href="#" class="content">
+                        <h1>SERVICE TITLE</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati pariatur at, earum
+                            praesentium unde voluptatibus dolore porro. Est maiores sint veniam aliquam consectetur.
+                            Velit minus magnam dicta ut earum suscipit.</p>
+                    </a>
+                </li>
+            </ul>
+            <a class="btn-s" href="#">more</a>
+        </section>
+
+        <!--相關影片  -->
+        <section id="video">
+            <header class="title">
+                <h2>VIDEO</h2>
+                <h3>相關影片</h3>
+            </header>
+            <!-- 影片 -->
+            <div class="video">
+                <video src="./images/Planter.mp4" poster="./images/cover.jpg" controls autoplay muted>
+                    <!-- autoplay自動播放⇒ 瀏覽器現在規定需要再多設定預設靜音muted才給你播 -->
+                </video>
+            </div>
+        </section>
+        <!-- 關於我們 -->
+        <section id="about">
+
+            <div class="aboutContent">
+                <header class="title">
+                    <h2>ABOUT</h2>
+                    <h3>關於我們</h3>
+                </header>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, in mollitia! Dolor natus tenetur quae
+                    unde temporibus recusandae odit quia itaque animi molestias dolore magni soluta ab minima asperiores
+                    est quasi ea, quos fugit totam laboriosam. Aspernatur dolorem porro, ab est fugiat laudantium magnam
+                    placeat, nesciunt unde rem ullam nemo perferendis, minus temporibus quod praesentium neque?
+                    Perspiciatis explicabo consequuntur eaque odit impedit recusandae eveniet iure dolor, veniam libero,
+                    exercitationem modi tempore saepe quaerat laudantium beatae at laborum aliquam a iusto voluptate
+                    voluptatum rem architecto? Dolor, ipsam optio quisquam a sunt, iusto cum, similique eaque iure
+                    dolorum distinctio ipsa perspiciatis vero modi impedit error. Deleniti maxime architecto ducimus
+                    soluta. Quis reiciendis quidem perspiciatis totam optio, nam fuga ex quia doloremque repudiandae eum
+                    ipsum? Fugiat culpa officia laudantium doloremque doloribus vitae, accusamus cum veritatis nostrum
+                    iusto voluptates similique eos, quod optio. Recusandae quis odit, unde ratione expedita eligendi
+                    tempore totam tenetur quas voluptate pariatur ab, animi delectus quaerat exercitationem, cum fugiat
+                    dolore. Iusto animi veniam a officiis beatae quia pariatur quisquam ab quasi ipsam ipsa maxime,
+                    incidunt doloribus enim facilis! Adipisci alias et cumque qui? Atque error voluptatibus nam. Ab unde
+                    excepturi veniam! Nam enim officia nemo quidem vel blanditiis voluptates accusamus odit porro, autem
+                    quaerat quas, qui quae labore doloribus. Magnam modi saepe odit. Libero tenetur aperiam impedit
+                    incidunt ipsam ipsa ullam nisi rerum delectus, nesciunt magni totam non fugiat optio laboriosam nemo
+                    labore, alias minima. Dolores dolorem eum tempora, quod velit expedita, odio iure animi ipsum
+                    deleniti blanditiis, tenetur nobis reprehenderit sapiente labore ad. Hic maxime dolore maiores,
+                    dicta neque voluptatibus minima, vel ratione doloremque alias pariatur fugiat delectus quis! Soluta
+                    eos adipisci nostrum consectetur reprehenderit, possimus, saepe ab totam, voluptatibus delectus
+                    nihil dolor numquam. Dicta deleniti quod aut accusantium, ut architecto necessitatibus accusamus ex
+                    libero quae tenetur repudiandae non? Odit perferendis quibusdam ab corporis est dolor in! At
+                    blanditiis, ipsam neque iure explicabo, quo temporibus cupiditate nisi deserunt maiores commodi!
+                    Aliquid voluptatem fugit libero minima dolorum inventore aperiam velit odio, vero dicta esse harum
+                    impedit nesciunt dignissimos, eligendi totam ratione deleniti eaque? Maxime similique accusamus,
+                    dolores commodi eveniet iste veritatis inventore tenetur aperiam? Eveniet repudiandae distinctio
+                    voluptates saepe inventore enim, hic voluptate natus consectetur odit, ipsum sit eius vero. Natus
+                    unde, quibusdam officiis voluptas qui doloribus, hic, minus obcaecati sapiente cumque accusamus? At
+                    id, rerum earum similique perferendis maxime aliquid consequuntur amet nisi excepturi velit
+                    reiciendis aspernatur dignissimos laborum tempora aperiam error ab quae, quibusdam nulla temporibus
+                    assumenda laboriosam aliquam? Placeat voluptas blanditiis ad cumque natus ducimus enim quasi ipsum
+                    illo, a soluta perspiciatis repellendus consequatur tempore obcaecati modi eius in aperiam, nam
+                    ipsam ut aspernatur necessitatibus reiciendis labore. Voluptate, architecto ab cumque reprehenderit
+                    amet enim labore non reiciendis perspiciatis similique laudantium voluptatum voluptatibus rem
+                    ducimus esse ea impedit voluptatem dolor porro provident totam laboriosam blanditiis sunt! Iure
+                    dolorum quidem amet magnam nam obcaecati consectetur atque deleniti cupiditate. Soluta ad est non
+                    doloribus officiis quia nostrum. Laudantium culpa ratione soluta esse aliquam cupiditate, ea quod
+                    quia facere! Debitis soluta hic culpa molestiae necessitatibus nihil placeat qui amet facilis,
+                    veritatis ullam repellat sint quis corporis cum laudantium. Sapiente blanditiis, aliquam ratione
+                    reiciendis nemo eligendi tenetur sunt fuga quo, dolore assumenda illo nesciunt illum aperiam eveniet
+                    sint numquam quas repudiandae voluptatem, consequatur perferendis dolorem esse. Repellat similique,
+                    neque autem ipsa perferendis beatae sed nulla odio expedita a placeat explicabo architecto est. Eos
+                    nemo repellat ipsum quasi itaque molestias optio repudiandae rerum officia soluta. Dolorem quisquam
+                    possimus quod, veniam, porro ipsam facere quidem corporis ratione in molestias dolore deserunt!
+                    Similique qui vel non aut beatae perferendis quod numquam quos? Iste, praesentium mollitia
+                    distinctio et eaque magnam ipsam ut incidunt enim omnis, ex consectetur perferendis, laudantium
+                    vero? Libero dolorum maiores sint consequuntur suscipit debitis ducimus sequi corporis ipsum omnis
+                    voluptatum voluptatibus, sunt aperiam pariatur consectetur tempore ratione maxime obcaecati
+                    reprehenderit dolores! Nam commodi magnam dolorum dolore doloremque! Laborum cumque incidunt maxime
+                    delectus vel repellendus vitae obcaecati. A illo temporibus vitae porro aperiam labore quis,
+                    possimus atque ipsam totam voluptate, aspernatur eos fugit modi quos dicta optio quae cupiditate
+                    nisi eum quibusdam ipsa, provident officia eligendi. Reprehenderit optio iusto eos quidem molestiae
+                    laborum voluptatem cum impedit dicta fuga, saepe, voluptatibus aut perspiciatis sunt quos. Eligendi
+                    odio modi ratione voluptas praesentium molestias necessitatibus perferendis itaque. Ipsum voluptate
+                    aliquam assumenda atque necessitatibus modi voluptates quis vero nesciunt eveniet dicta repellendus
+                    natus, aspernatur dolore sed esse! Facere vitae aliquid laborum accusantium consectetur doloribus
+                    maxime blanditiis nulla vel voluptatum hic, cupiditate amet repudiandae laudantium! Laudantium
+                    eligendi cumque voluptatibus quibusdam enim cupiditate incidunt aut, reprehenderit vero.
+                    Voluptatibus quisquam ut neque sed sequi eos reprehenderit, dolore asperiores adipisci excepturi
+                    vitae, labore culpa veritatis possimus harum fugit necessitatibus impedit, ducimus pariatur illo ad
+                    ab itaque magnam. Placeat, inventore deserunt tenetur fugit atque, aperiam reiciendis nulla dolorem
+                    consectetur dolor laudantium ipsum facere eius fuga esse quas sit facilis adipisci autem molestiae
+                    exercitationem laboriosam culpa? Quidem saepe qui voluptates a, atque, veritatis natus perspiciatis
+                    officiis reiciendis ullam nulla laboriosam minima rem nisi. Explicabo, cum saepe blanditiis aperiam
+                    distinctio quo illum repudiandae fugiat itaque esse eos at provident? Tenetur velit nemo aut cum
+                    praesentium atque! Debitis possimus quos fuga corrupti ratione, culpa omnis minima sint vel illum
+                    autem at quae repellendus ex nostrum suscipit libero deleniti! Voluptates culpa inventore recusandae
+                    temporibus quibusdam, obcaecati provident possimus nulla totam sit veniam assumenda itaque
+                    repudiandae ea, ipsam natus nemo nihil at asperiores, excepturi nostrum porro. Officiis hic ex alias
+                    deserunt? Repudiandae illum minima quo, pariatur excepturi autem ratione aperiam officiis, facere,
+                    ipsa quidem? Dicta unde illum voluptatum nam sed modi culpa fuga corrupti eligendi. Repudiandae
+                    voluptatibus ullam totam et! Repudiandae cum voluptas ad autem rem quod eum quia quo sed? Excepturi,
+                    debitis dolore illo blanditiis accusamus voluptatum cupiditate asperiores, necessitatibus voluptas
+                    cumque veniam voluptates officiis totam, facere vitae quis! Beatae quisquam rem ab at rerum adipisci
+                    unde architecto, corporis soluta deleniti esse numquam placeat mollitia dolore saepe error eius.
+                    Pariatur maiores aliquam consequatur! Repellendus laboriosam saepe quos, consequatur fuga
+                    voluptates, in molestiae reprehenderit, officiis pariatur delectus aut!</p>
+            </div>
+            <!-- 影片無法用CSS設背景需要用HTML，muted要靜音才能播 -->
+            <video src="./images/flower.mp4" autoplay muted></video>
+
+        </section>
+        <!--  -->
+        <section id="contact">
+            <header class="title">
+                <h2>CONTACT</h2>
+                <h3>聯絡我們</h3>
+            </header>
+
+            <form action="" method="post" name="form--contact" id="form--contact" title="聯絡我們表單">
+                <label for="userName">*姓名:</label>
+                <input type="text" name="userName" title="姓名欄位" placeholder="請輸入姓名" required autocomplete>
+
+                <label for="tel">*電話:</label>
+                <input type="tel" name="tel" id="tel" title="聯絡電話" placeholder="請輸入電話" required autocomplete>
+
+                <label for="email">*Email信箱</label>
+                <input type="email" name="email" id="email" title="Email欄位" placeholder="請輸入Email信箱" required
+                    autocomplete>
+
+                <label for="message">*留言</label>
+                <textarea name="message" id="message" title="留言欄位" rows="10" required></textarea>
+
+                <small>此表單為練習作品，不具有資料蒐集功能</small>
+
+                <button type="submit" name="btn-submit" id="btn-submit" title="送出按鈕">
+                    <span>送出</span>
+                </button>
+            </form>
+
+            <!-- 裝飾花 -->
+            <div class="flower_r"><img src="./images/flower_r.png" alt="裝飾紅花"></div>
+            <div class="flower_w"><img src="./images/flower_w.png" alt="裝飾白花"></div>
+
+
+        </section>
+
+    </main>
+    <!-- 頁尾區 -->
+    <footer>
+        <!-- logo區 -->
+        <div>
+            <h1 class="logo">
+                <!-- LOGO區 -->
+                <a href="./index.html"><img src="./images/logo_b.svg" alt="芮塔花室LOGO"></a>
+            </h1>
+            <!-- 主選單區 -->
+            <nav class="navigation">
+                <ul class="menu">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">NEWS</a>
+                        <ul class="submenu">
+                            <li><a href="#">媒體報導</a></li>
+                            <li><a href="#">活動訊息</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">SERVICE</a>
+                        <ul class="sub">
+                            <li><a href="#">活動1</a></li>
+                            <li><a href="#">活動2</a></li>
+                            <li><a href="#">活動3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">VIDEO</a></li>
+
+                    <li><a href="#">ABOUT</a>
+                        <ul>
+                            <li><a href="#">品牌介紹</a></li>
+                            <li><a href="#">公司歷史</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">CONTACT</a>
+                        <ul>
+                            <li><a href="#">聯絡方式</a></li>
+                            <li><a href="#">交通資訊</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <small>copyright &copy;芮塔花室</small>
+        <div id="goTop"><img src="./images/arrow-up.svg" alt=""></div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- 換圖輪播的JQuery -->
+    <script src="./carousel.js"></script>
+
+    <!-- smoove -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+
+
+
+    <script src="./script.js"></script>
+    <!-- 自己定義的一定要在最下面 -->
+</body>
+
+</html>

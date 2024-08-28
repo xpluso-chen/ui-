@@ -1,0 +1,980 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+/* UTF-8一定要在第一行，如果你的字體名稱是中文就要設定(例:微軟正黑) */
+/* google fonts一定要在第二行 */
+@font-face {
+    font-family: Verve;
+    src: url(../webfonts/Verve.ttf);
+}
+
+
+/* 因為每個標籤都有預設的設計(例如行距)，所以乾脆全部拿掉重新設計 */
+/* 但如果有套開源前端框架就不能寫 */
+/* 重置所有標籤的樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 所有的標籤拿掉內框和邊線累加，讓設計RWD更方便 */
+
+}
+
+/* 重置字體 */
+body {
+    font-family:
+        /*西文*/
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Ubuntu,
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        /*中文*/
+        "蘋方-繁",
+        "PingFang TC",
+        "黑體-繁",
+        "Heiti TC",
+        "微軟正黑體",
+        "Microsoft JhengHei",
+        "Noto Sans TC",
+        sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    /* 拿掉預設的粗體*/
+}
+
+/* 重置列表 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 重置圖片 */
+img {
+    display: block;
+    /* 因img單獨存在時會有一個預設間距 */
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 重置連接 */
+a {
+    display: block;
+    color: var(--deep);
+    /* 將所有的a從預設inline改成區塊 */
+    text-decoration: none;
+}
+
+
+:root {
+    /* 定義顏色 */
+    --deep: #444;
+    --grey: #999;
+    --newscolor: #fdf5fa;
+    --servicecolor: #ecfff4;
+    --viedocolor: #eeffff;
+
+    --light: #fcffdb;
+}
+
+#news {
+    padding: 60px;
+    background-color: var(--newscolor);
+}
+
+#news .content {
+    background-color: #FFFFFF;
+    transition: .4s;
+}
+
+#news .content:hover {
+    background-color: var(--light);
+}
+
+/* 其他裝置變版 */
+@media (max-width:820px) {
+    #news .item:last-child {
+        display: none;
+    }
+}
+
+@media (max-width:640px) {
+    #news .item:nth-child(n+2) {
+        display: none;
+    }
+}
+
+.btn-s {
+    background-color: #ffffff;
+    color: #8f6b6d;
+    margin: 60px;
+    padding: 10px;
+    border-radius: 99px;
+
+}
+
+/*  */
+
+#service {
+    padding: 60px;
+    background-color: var(--servicecolor);
+}
+
+#service .content:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+
+
+
+.btn-login {
+    background-color: #ff9595aa;
+    width: auto !important;
+    height: 50px;
+    line-height: 30px;
+    padding: 0;
+    border-radius: 99px;
+}
+
+.btn-login:hover {
+    background-color: #ff7b29;
+    color: #000;
+    /* 碰到後字變色 */
+}
+
+#goTop{
+    position: fixed;/*固定定位，需搭配座標位置*/
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+
+    width: 50px;
+    height: 50px;
+    background-color: #8f6b6d;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+
+/* -----頁首區----- */
+#topbar {
+    position: fixed;
+    z-index: 999;
+    /* 權重最高 */
+    width: 100%;
+    /* 固定定位 */
+
+    display: flex;
+    /* 預設主軸為水平方向 */
+    justify-content: space-between;
+    /* 主軸水平均分貼齊頭尾 */
+
+    padding: 20px;
+    /* 內距，離邊框的距離 */
+
+    align-items: center;
+    /* 讓icon和nav至中，因為主軸是水平，所以調上下至中 */
+    background-color: transparent;
+}
+
+.logo {
+    width: 65px;
+
+}
+
+/* 漢堡按鈕區 */
+.navbar {
+    /* 讓他至右 */
+    display: flex;
+    flex-direction: column;
+    /* 主軸垂直 */
+    align-items: flex-end;
+    /* 副軸水平靠右 */
+}
+
+.hamburger {
+    /* 把瀏覽器按鈕預設樣式換掉 */
+    background-color: transparent;
+    border: none;
+}
+
+
+
+
+
+@media (min-width:641px) {
+    .hamburger {
+        display: none;
+    }
+
+    /* 桌機板消失，讓他只出現在手機板 */
+}
+
+
+
+
+
+
+/* 主要選單區 */
+.navigation {
+    display: flex;
+    /* 用flex時預設水平左右排列 */
+    flex-direction: column;
+    /* 改為(垂直)上下排列 */
+    align-items: flex-end;
+    /* 副軸現在是水平左右，那要他靠右，就寫水平的底 */
+
+
+}
+
+/* --------icon-------- */
+.navigation .icon {
+    display: flex;
+}
+
+.navigation .icon a {
+    width: 35px;
+    height: 35px;
+    /* border: solid 1px; */
+    transition: 0.35s;
+}
+
+.icon-fb {
+    background-image: url(../images/icon-fb.svg);
+
+}
+
+.icon-fb:hover {
+    background-image: url(../images/icon-fb-hover.svg);
+
+}
+
+.icon-ig {
+    background-image: url(../images/icon-ig.svg);
+}
+
+.icon-ig:hover {
+    background-image: url(../images/icon-ig-hover.svg);
+}
+
+.icon-line {
+    background-image: url(../images/icon-line.svg);
+    /* 背景無尺寸，跟著a容器大小縮放 */
+    /* 只有SVG檔會等比例縮放，其他圖檔是原始尺寸 */
+}
+
+.icon-line:hover {
+    background-image: url(../images/icon-line-hover.svg);
+
+}
+
+/*------menu-------- */
+.navigation .menu {
+    display: flex;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 99px;
+}
+
+.navigation .menu li {
+    border-right: solid 2px #777;
+}
+
+.navigation .menu li:last-child {
+    border-right: none;
+    /* 把最後一個的右邊|拔掉 */
+}
+
+.navigation .menu a {
+
+    margin: 0 10px;
+    font-size: .9rem;
+    line-height: 1;
+    /* 控制|的高度，寫1就是16px */
+    border-bottom: solid 2px transparent;
+    /* 多這一個是為了留空間給hover，不然到hover時需要額外生出空間顯示底線，看起來會像擠底線出來 */
+    /* transparent為透明 */
+    transition: 0.35s;
+
+}
+
+.navigation .menu a:hover {
+    border-bottom: solid 2px #777;
+}
+
+
+
+
+
+
+/* -------主要內容共用區-------- */
+section {
+    display: flex;
+    /* 垂直水平都至中 */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+
+}
+
+.title h2 {
+    font-family: Verve, sans-serif;
+    /* sans-serif為以防萬一Verve沒套到時使用 */
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: .3rem;
+    border-bottom: 1px solid #707070;
+    /* 底線 */
+}
+
+.title h3 {
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 2rem;
+    /* 文字頭頂高 */
+}
+
+/* --------聯絡我們----------- */
+#contact {
+
+    position: relative;
+    /* 給花作定位用 */
+
+    overflow: hidden;
+    /* 花多的隱藏 */
+
+    /* 設定背景圖 */
+    background-image: url(../images/bg_contact.jpg);
+    background-size: cover;
+    /* 超過時會自動剪裁 */
+    background-position: center center;
+    /* 剪裁方式:切四周維持圖至中 */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* 固定圖 */
+
+    padding: 20px;
+    /* 內距 */
+}
+
+#form--contact {
+    font-family: 'Noto Sans TC', 'sans-serif';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 表單至中 */
+    width: 35%;
+}
+
+#form--contact label {
+    font-size: .89rem;
+    line-height: 2rem;
+    /* 文字頭頂高 */
+    margin-top: 1rem;
+    /* 空間內距頂高 */
+
+    width: 100%;
+}
+
+#form--contact input,
+#form--contact textarea {
+    width: 100%;
+
+    /* 設定輸入時顯示的字體*/
+    padding: 6px;
+    color: #8f6b6d;
+    font-weight: 60;
+
+    /* 玻璃擬態用 */
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+}
+
+#form--contact input,
+#form--contact textarea,
+#topbar .navigation .menu,
+#btn-submit {
+    /* 玻璃擬態 */
+    background-image: linear-gradient(150deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.5));
+    /* 覆蓋掉預設的白色 */
+
+    backdrop-filter: blur(10px);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .35), inset -1px -1px rgba(255, 255, 255, 0.8);
+
+}
+
+
+
+
+
+#form--contact input:focus,
+#form--contact textarea :focus {
+    outline: none;
+    /* 去除邊框 */
+}
+
+#form--contact input::placeholder {
+    font-size: .8rem;
+    font-weight: 400;
+    color: #d1babb;
+}
+
+#form--contact small {
+    font-size: .8rem;
+    color: #605555;
+    padding: 15px 5px;
+}
+
+@media(max-width:820px) {
+    #form--contact {
+        width: 50%;
+    }
+}
+
+@media(max-width:640px) {
+
+    .flower_r,
+    .flower_w {
+        display: none;
+    }
+
+    #form--contact {
+        width: 60%;
+    }
+}
+
+
+/* 動態按鈕 */
+#btn-submit {
+
+    border-radius: 50px;
+    /* 定義位置 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 游標樣式 */
+    cursor: pointer;
+    text-transform: uppercase;
+    height: 60px;
+    width: 120px;
+    opacity: 1;
+    background-color: transparent;
+    border: none
+}
+
+button span {
+    color: #605555;
+    font-size: 12px;
+    font-weight: 500;
+    /* 字和字要加空格時的設定 */
+    letter-spacing: 1rem;
+    /* 讓字後面再加一字大小的空格 */
+    padding-left: 1rem;
+    /* 讓詞至中(因詞目前是送_出_，對其在) */
+}
+
+button:hover {
+    animation: rotate 0.7s ease-in-out both;
+    /* animation動畫效果 */
+}
+
+button:hover span {
+    animation: storm 0.7s ease-in-out both;
+    animation-delay: 0.06s;
+}
+
+/* span:移動跨度 */
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+
+    /* 在animation: rotate 0.7s的進行到1/4時的效果 */
+
+    25% {
+        transform: rotate(3deg) translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: rotate(-3deg) translate3d(0, 0, 0);
+    }
+
+    75% {
+        transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+}
+
+@keyframes storm {
+    0% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+
+    25% {
+        transform: translate3d(4px, 0, 0) translateZ(0);
+    }
+
+    50% {
+        transform: translate3d(-3px, 0, 0) translateZ(0);
+    }
+
+    75% {
+        transform: translate3d(2px, 0, 0) translateZ(0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+}
+
+/* 裝飾花 */
+.flower_r {
+    position: absolute;
+
+    /* 給定位 */
+    /* 跑出框框外就給負值 */
+    left: -100px;
+    bottom: -50px;
+    width: 300px;
+    transform: rotate(40deg);
+}
+
+.flower_w {
+    position: absolute;
+
+    /* 給定位 */
+    /* 跑出框框外就給負值 */
+    right: -100px;
+    bottom: 100px;
+    transform: rotate(325deg);
+}
+
+/* 最新消息 */
+.box__list {
+    width: 80%;
+    max-width: 1440px;
+    display: flex;
+}
+
+.box__list .item {
+    flex: 1;
+    /* 均分 */
+    margin: 0 15px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, .20);
+    overflow: hidden;
+    border-radius: 20px;
+
+}
+
+.box__list img {
+    object-fit: cover;
+    /* 自動剪裁+自動致中 */
+    height: 100%;
+    /* wight 已在前面設定過 */
+
+}
+
+.box__list figure {
+    height: 30vh;
+}
+
+/* 圖片img以figure為尺寸依據*/
+
+.box__list .content {
+    padding: 15px 20px;
+
+}
+
+
+.box__list h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.box__list p {
+    font-size: .9rem;
+    text-align: justify;
+    /* 齊行-多用在中文，用在英文會變成單字的間距均分 */
+
+
+}
+
+#new p {
+    /* 多行省略 */
+    overflow: hidden;
+    /* 多出來時則省略 */
+    text-overflow: ellipsis;
+    /* 自動加省略號... */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    /* 定義Box垂直佈局 */
+    -webkit-line-clamp: 5;
+    /* 行數限制 */
+}
+
+/* 服務項目區 */
+#service p {
+    /* 單行省略 */
+
+    overflow: hidden;
+    /* 多出來時則省略 */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* 不換行 */
+}
+
+#service .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 60vh;
+    background-position: center;
+    /* 背景圖定位 */
+    background-size: cover;
+}
+
+#service a {
+
+    color: white;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.svc-1 {
+    background-image: url(../images/pt_svc1.jpg);
+}
+
+.svc-2 {
+    background-image: url(../images/pt_svc2.jpg);
+}
+
+.svc-3 {
+    background-image: url(../images/pt_svc3.jpg);
+}
+
+.svc-4 {
+    background-image: url(../images/pt_svc4.jpg);
+}
+
+/* 821px以上 */
+@media(min-width:821px) {
+    #service .btn-s {
+        display: none;
+    }
+}
+
+/* 821px以下套用 */
+@media(max-width:820px) {
+    #service .box__list {
+        flex-direction: column;
+        /* 改直排排列方式 */
+        /* 自動抓內容尺寸，改成高60vh */
+        /* flex:1高度均分時，父元素預設抓內容尺寸，需額外設定高才有均分空間 */
+        height: 60vh;
+    }
+}
+
+
+
+#service .item {
+    margin-bottom: 30px;
+
+    #service .item:nth-child(n+3) {
+        display: none;
+    }
+}
+
+
+
+/* 影片區 */
+/* section video*/
+#video {
+    padding: 60px;
+    background-color: var(--viedocolor);
+}
+
+/* div video*/
+#video .video {
+    width: 65%;
+    max-width: 1050px;
+    /* 尺寸設定 */
+}
+
+/* 影片本人 */
+video {
+    width: 100%;
+}
+
+
+@media(max-width:820px) {
+    #video {
+        height: auto;
+        padding: 5vh 0;
+
+    }
+}
+
+
+#about {
+    position: relative;
+    background-color: #ffe0b7;
+    /* 作為#about .aboutContent position:absolute定位 */
+}
+
+/* 關於我們區 */
+#about .aboutContent {
+    width: 65%;
+    height: 65vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* 垂直水平致中 */
+
+    position: absolute;
+    z-index: 1;
+}
+
+
+#about p {
+    width: 90%;
+    /* 寬是aboutContent區塊的90%寬 */
+    height: 65vh;
+    /* 和aboutContent區塊一樣高 */
+
+    overflow: auto;
+    /* 超過才顯示卷軸 */
+    padding-right: 1rem;
+    /* 讓字和卷軸有間格 */
+}
+
+/*改變卷軸基底樣式  */
+::-webkit-scrollbar {
+    height: 15px;
+    width: 15px;
+    background-color: #ffffff;
+}
+
+/*捲軸上的按鈕（向上和向下的箭頭）  */
+::-webkit-scrollbar-button {
+    background-color: #ffb85b;
+    height: 8px;
+    width: 8px;
+}
+
+/* 可拖曳的滾動手柄 */
+::-webkit-scrollbar-thumb {
+    background-color: #c87b17;
+
+}
+
+/* 原角 */
+#about p::-webkit-scrollbar {
+    height: 15px;
+    width: 15px;
+    background-color: #ffffff;
+}
+
+#about p::-webkit-scrollbar-thumb {
+    background-color: #c87b17;
+    border-radius: 99px;
+}
+
+#about p ::-webkit-scrollbar-button {
+    display: none;
+}
+
+#about p ::-webkit-scrollbar {
+    border-radius: 99px;
+}
+
+#about p ::-webkit-scrollbar-track {
+    border-radius: 99px;
+}
+
+#about p ::-webkit-scrollbar-corner {
+    border-radius: 50px;
+}
+
+#about video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: overlay;
+    /* 加一個覆蓋效果 */
+
+}
+
+@media(max-width:820px) {
+    #about .aboutContent {
+        width: 85%;
+    }
+}
+
+
+/* 頁尾 */
+
+/* 用div控制擺放方向 */
+footer {
+    padding: 20px;
+}
+
+footer div {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .navigation .menu li {
+    border: none;
+    /* 取消邊框線 */
+    margin: 0 15x;
+}
+
+footer .navigation .menu a {
+    font-weight: 700;
+}
+
+footer .navigation .menu {
+    margin: 0;
+    padding: 0;
+}
+
+/* 中型設備-ipad air平板(820以下) */
+@media (max-width:820px) {
+
+    footer {
+        text-align: center;
+        /* 控制copyright至中 */
+    }
+
+    /*將會破版的頁尾拿掉 */
+    footer div {
+        display: none;
+    }
+}
+
+
+
+
+
+
+/* 小型設備-手機 */
+@media (max-width:640px) {
+    #topbar {
+        align-items: flex-start;
+    }
+
+    .hamburger .bar {
+        display: block;
+        /* 讓它出現 */
+        width: 25px;
+        height: 3px;
+        /* 變成線 */
+        background-color: #8f6b6d;
+        margin: 5px auto;
+        transition: .35s;
+    }
+
+    /* 三 變換為 X */
+    .hamburger.is-active .bar:nth-child(1) {
+        transform: rotate(45deg) translateY(11px); 
+        
+    }
+
+    .hamburger.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.is-active .bar:nth-child(3) {
+        transform: rotate(-45deg) translateY(-11px);
+    }
+    button:hover span {
+        animation: none;
+        animation-delay: none;
+    }
+
+
+    .navigation {
+        align-items: center;
+        padding: 10px;
+        background-image: linear-gradient(150deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.5));
+        /* 覆蓋掉預設的白色 */
+
+        backdrop-filter: blur(15px);
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, .35), inset -1px -1px rgba(255, 255, 255, 0.8);
+
+        border-radius: 15px;
+        /* 動畫效果 */
+        animation: hide .55s both;
+    }
+
+    .navigation.show{
+        /* 當class同時有.navigation和.show時 */
+        animation:show .55s both;
+    }
+
+@keyframes hide{
+from{/* 動態顯示 */opacity: 1; display: flex;}
+to{/* 隱藏 */opacity: 0; display: none;}
+}
+
+@keyframes show{
+    from{ /* 隱藏 */opacity: 0; display: none;}
+    to{/* 顯示 */opacity: 1; display: flex;}
+}
+
+
+
+    #topbar .navigation .menu {
+        text-align: center;
+        flex-direction: column;
+        order: -1;
+        /* 把玻璃擬態關掉 */
+        background-image: none;
+        box-shadow: none;
+        backdrop-filter: none;
+        background-color: transparent;
+
+    }
+
+    .navigation .menu a {
+        margin: 15px;
+    }
+
+    .navigation .menu li {
+        border: none;
+    }
+
+
+}
