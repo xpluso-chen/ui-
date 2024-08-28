@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"
+    integrity="sha512-1/8Tj23BRrWnKZXeBruk6wTnsMJbi/lJsk9bsRgVwb6j5q39n0A00gFjbCTaDo5l5XrPVv4DZXftrJExhRF/Ug=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <title>Document</title>
+  <link rel="stylesheet" href="./postFiter-copy.css">
+
+</head>
+
+<body>
+
+ 
+  <!--地點-->
+  <div class='filter'>
+
+    <div id="type-title1" class="filter-title-Area">
+      <legend class="filter-title">地點顯示
+      </legend>
+      <div class="filter-btn">
+        <img class="filter-icon" src="./image/articleList/filter.svg" alt="三角形下拉按鈕">
+      </div>
+    </div>
+
+    <ul id="container-body" class="Classification">
+
+      <div id="container-1" class="filter-order-Area">
+        <!-- 多選 -->
+        <li>
+          <label class="container">台北市
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+        </li>
+        <!-- 選單按鈕，當按了container-1會顯示多選inOder-1 -->
+        <div class="filter-btn">
+          <img class="filter-icon" src="./image/articleList/filter.svg" alt="三角形下拉按鈕">
+        </div>
+      </div>
+
+
+      <!--多選的項目-->
+      <ul id="inOder-1" class="inOder">
+        <li>
+          <label class="container">信義區
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+        </li>
+        <li>
+          <label class="container">中山區
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+        </li>
+      </ul>
+    </ul>
+  
+
+  <!--  -->
+  
+
+    <div id="type-title2" class="filter-title-Area">
+      <legend class="filter-title">類型
+      </legend>
+      <div class="filter-btn">
+        <img class="filter-icon" src="./image/articleList/filter.svg" alt="三角形下拉按鈕">
+      </div>
+    </div>
+
+
+    <!-- 當按了type-title2會顯示type-body -->
+    <ul id="type-body" class="Classification">
+      <div id="" class="filter-order-Area">
+        <!-- 多選 -->
+        <li>
+          <label class="container">台北市
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+        </li>
+      </div>
+
+      <div id="" class="filter-order-Area">
+        <!-- 多選 -->
+        <li>
+          <label class="container">台北市
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+        </li>
+      </div>
+
+      <div id="" class="filter-order-Area">
+        <!-- 多選 -->
+        <li>
+          <label class="container">台北市
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+        </li>
+      </div>
+
+    </ul>
+  
+
+
+</div>
+
+
+  <script>
+    // 點地點讓他消失或顯示
+    let typeTitle1 = document.getElementById('type-title1');
+    let containerBody = document.getElementById('container-body');
+
+    typeTitle1.addEventListener('click', () => {
+    if (containerBody.style.display === 'block') {
+      containerBody.style.display = 'none';
+    } else {
+      containerBody.style.display = 'block';
+    }
+    });
+
+// 點分類讓他消失或顯示
+    let typeTitle2 = document.getElementById('type-title2');
+    let typeBody = document.getElementById('type-body');
+
+    typeTitle2.addEventListener('click', () => {
+    if (typeBody.style.display === 'block') {
+      typeBody.style.display = 'none';
+    } else {
+      typeBody.style.display = 'block';
+    }
+    });
+
+
+// 讓台北市打開信義區中山區
+let container1 = document.getElementById('container-1');
+    let inOder1 = document.getElementById('inOder-1');
+
+    container1.addEventListener('click', () => {
+    if (inOder1.style.display === 'block') {
+      inOder1.style.display = 'none';
+    } else {
+      inOder1.style.display = 'block';
+    }
+    });
+
+  </script>
+
+
+
+
+
+
+</body>
+
+</html>
