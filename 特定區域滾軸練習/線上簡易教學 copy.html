@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+
+    section {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      font-size: 4em;
+      color: white;
+      margin: 2rem 0;
+      position: absolute;
+    }
+
+    section:nth-child(1) {
+      background: hsl(210, 100%, 20%);
+      position: relative;
+    }
+
+    section:nth-child(2) {
+      background: hsl(300, 100%, 20%);
+    }
+
+    /* #region list區塊規劃*/
+    #attraction-introduction {
+      position: relative;
+      width: 80%;
+      height: 50%;
+      margin: 0 10%;
+      margin-top: 120px;
+      padding: 5%;
+      border-radius: 10px;
+      background-color: aqua;
+    }
+
+    #attraction-article {
+      position: relative;
+      /* width: 100vw; */
+      /* height: 100vh; */
+      /* top: 1; */
+      width: 80%;
+      /* height: 50vh; */
+      margin: 0 10%;
+      padding: 5% 0;
+      overflow: auto;
+    }
+
+  .aboutContent {
+      width: 65%;
+      height: 65vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      /* position: absolute; */
+      z-index: 1;
+      
+    }
+
+    p {
+      width: 90%;
+      height: 20vh;
+      overflow: hidden;
+      padding-right: 1rem;
+      font-size: 1rem;
+    }
+
+    .block {
+      width: 90%;
+      height: 20vh;
+      overflow: hidden;
+      font-size: 1rem;
+    }
+  </style>
+  <title>CSS 隐藏滚动条</title>
+</head>
+
+<body>
+  <div id="attraction-introduction">
+    <div id="attraction-article">
+      <section>1
+        <div class="aboutContent">
+          <div class="block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate error cumque aspernatur
+            facere exercitationem facilis maiores, aliquam sunt, harum temporibus mollitia soluta animi voluptatem
+            numquam vitae neque! Expedita, quia optio.</div>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus autem magnam iusto. Unde ab,
+            dignissimos ut, deserunt fuga vero earum velit distinctio cupiditate explicabo amet fugiat aliquid possimus
+            asperiores at molestiae quos itaque delectus impedit in doloribus illo maiores necessitatibus! Explicabo
+            exercitationem repellendus iure eos est qui magni. Veniam adipisci esse odit ea quibusdam doloremque? Ab
+            atque nobis sequi explicabo sint pariatur facere earum aliquam ea architecto cupiditate, ipsam accusamus
+            magnam quam quas doloremque officia sed iste totam incidunt doloribus inventore dolorum? Reprehenderit
+            nostrum architecto animi cum blanditiis, quaerat magni similique molestias, nihil perspiciatis aperiam
+            quibusdam. Vel, rerum minima. Accusantium eveniet cupiditate nam neque est perspiciatis harum provident quis
+            odio, eligendi, ratione architecto culpa inventore beatae? Aut omnis deserunt porro rem facere odit, soluta
+            eum eveniet, sequi odio, eos voluptatum tempora vero blanditiis. Mollitia, doloremque exercitationem cum
+            culpa recusandae unde quasi quisquam soluta incidunt repellendus rem minima, quas quidem pariatur molestias
+            id error odio dolor. Quam veniam quia eveniet ratione dicta corporis quibusdam, magnam rerum, velit unde
+            tenetur ea. Impedit voluptatum, itaque quo porro asperiores a, quos dolorem sapiente repellat exercitationem
+            quas id facilis ipsum numquam accusantium, incidunt sit. Soluta sed pariatur qui excepturi, labore
+            similique. Voluptatem illo repellendus nam ipsum dolorum corporis sequi similique cum voluptas praesentium,
+            ea perspiciatis. Vel non nobis alias fugiat ad, impedit enim quam tempora harum doloribus veniam, ea eos,
+            maxime inventore corporis obcaecati fugit quia blanditiis possimus! Ea magnam voluptatem autem consequuntur
+            suscipit magni fugiat quisquam nostrum odit fuga ullam, officiis molestiae veniam harum quaerat cumque minus
+            quae sed nemo rem commodi accusamus libero corporis quibusdam. Repellendus sed ipsa quo dolorum perferendis,
+            aut fugiat quaerat eaque, laborum expedita, consequatur fugit fuga quisquam recusandae labore cumque illo
+            tempore! Ullam, maiores esse. Eum magnam iste nisi et consectetur provident unde delectus a ullam vel cumque
+            dolore, ea officiis quidem, esse, earum explicabo ex reprehenderit quos? Repellat voluptatum minus sequi
+            consectetur molestias illum, sapiente architecto, ad, recusandae ex vitae? Eos, accusamus! Autem laborum eum
+            sequi eveniet culpa, dolor voluptate eligendi consequatur odit repellendus quas doloribus dolorum voluptatem
+            iure architecto cum? Architecto, sit accusamus tempora quasi ducimus quisquam quibusdam ullam vel commodi et
+            quo voluptates eligendi velit suscipit praesentium earum libero veritatis rerum quia aliquid incidunt alias
+            harum. Voluptates, corrupti porro. Fugiat qui aut suscipit quisquam soluta voluptas commodi recusandae porro
+            magnam, totam maxime ad, doloremque magni labore ab hic quam ea debitis cumque inventore dolorem
+            voluptatibus quos officiis? Perferendis assumenda beatae tempora. Reiciendis neque facilis eligendi beatae
+            alias recusandae nulla voluptatem, adipisci iure perferendis repellendus veniam fugit vel! Nam numquam
+            consequuntur explicabo culpa aut incidunt eligendi quas atque, laboriosam ratione iste tenetur doloremque.
+            Esse perspiciatis non ullam dolorum, fugiat amet earum maxime architecto, voluptatem, iste deserunt sequi
+            dolores. Modi placeat dolorum consectetur perspiciatis nihil eum, velit error provident veritatis numquam
+            laudantium, asperiores aperiam. Ullam excepturi numquam temporibus eligendi enim libero necessitatibus,
+            obcaecati repudiandae ut! Officiis at officia nobis voluptatum incidunt recusandae nulla quidem consequatur
+            a error odit in ducimus, accusantium minus mollitia velit quia ea labore dolores?</p>
+        </div>
+      </section>
+      <section>2</section>
+
+    </div>
+  </div>
+
+
+</body>
+
+</html>
