@@ -69,4 +69,69 @@ img {
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+#hot .col {
+  position: relative;
+}
+#hot .col h2 {
+  position: absolute;
+  top: calc(50% - 2rem);
+  left: calc(50% - 6rem);
+  color: #fffefe;
+  text-shadow: 1px 1px 3px;
+  z-index: 2;
+}
+#hot .col .clip {
+  position: relative;
+  display: block;
+  clip-path: polygon(0 0, 100% 0%, 50% 100%);
+}
+#hot .col .clip:hover::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.tabs-btn {
+  display: flex;
+}
+.tabs-btn li {
+  flex: 1;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+  border: 1px solid #444;
+  background: transparent;
+}
+
+.ui-tabs .ui-tabs-nav li {
+  border-bottom-width: 1;
+  border: 3px;
+}
+
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+  padding: 0;
+}
+
+.ui-widget-header {
+  border: 1px solid #dddddd;
+  background: #e9e9e9;
+  color: #333333;
+  font-weight: bold;
+}
+
+.ui-tabs .ui-tabs-panel {
+  display: flex;
+}
+.ui-tabs .ui-tabs-panel > div {
+  flex: 1;
 }/*# sourceMappingURL=style.css.map */
