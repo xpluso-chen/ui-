@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彈跳視窗範例</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #clickable-div {
+            padding: 20px;
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            width: 200px;
+            margin: 50px auto;
+            border-radius: 5px;
+        }
+
+        /* #popup-window {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        } */
+
+        #popup-content {
+            /* background-color: white; */
+            width: 80%;
+            max-width: 1440px;
+            height: 80vh;
+            padding: 20px;
+            position: relative;
+            border-radius: 10px;
+            /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); */
+            display: none;
+            bottom: 10vh;
+            left: 10%;
+        }
+
+        #close-btn {
+            position: absolute;
+            top: 1px;
+            right: 20px;
+            font-size: 64px;
+            cursor: pointer;
+
+        }
+
+
+        iframe {
+            border-radius: 10px;
+            border: 0px solid #007BFF;
+    /* border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 10px;  */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="clickable-div">點擊我開啟彈跳視窗</div>
+
+
+
+    <div id="popup-content">
+        <span id="close-btn">&times;</span>
+        <iframe src="../花網站-2/index.html" width="100%" height="100%" title="內嵌頁面"></iframe>
+    </div>
+
+
+    <script>
+        let popup = document.getElementById('clickable-div');
+        let close = document.getElementById('close-btn');
+        let newpage = document.getElementById('popup-content');
+
+        popup.addEventListener('click', function () {
+            if (newpage.style.display === 'block') {
+                newpage.style.display = 'none';
+            } else {
+                newpage.style.display = 'block';
+            }
+        });
+
+        close.addEventListener('click', function () {
+            if (newpage.style.display === 'block') {
+                newpage.style.display = 'none';
+            } else {
+                newpage.style.display = 'block';
+            }
+        });
+
+
+
+    </script>
+</body>
+
+</html>
