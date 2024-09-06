@@ -7,6 +7,32 @@ img {
     width: 100%;
 }
 
+.carousel {
+    img {
+        object-fit: cover;
+        height: 100%;
+    }
+
+    .carousel-item {
+        height: calc(100vh - 70px);
+    }
+}
+
+// 導覽列
+.navbar {
+    height: 70px;
+
+    .navbar-brand {
+        img {
+            height: 45px;
+        }
+    }
+    .btn-search{
+        width: 5rem;
+    }
+}
+
+
 .title {
     @include bordered-l;
     padding-left: 1rem;
@@ -127,6 +153,39 @@ img {
     }
 }
 
+#ass {}
+
+#tabs {
+    width: 80%;
+    margin: 0 auto;
+
+    >* {
+        margin-bottom: 1rem;
+    }
+
+    .content {
+        h2 {
+            display: inline;
+            color: map-get($color , light);
+            background-color: black;
+            padding: 0px 12px;
+            box-shadow: $box-shadow-mark;
+        }
+
+        data {
+            display: block;
+        }
+
+        mark {
+            font-weight: 500;
+            font-size: map-get($font-size, 1);
+            background-color: greenyellow;
+        }
+    }
+
+
+}
+
 .tabs-btn {
     display: flex;
 
@@ -170,8 +229,15 @@ a.ui-button:active,
     display: flex;
 
     >div {
-    // >用在選第一層時
+        // >用在選第一層時
         flex: 1;
     }
 
-    }
+}
+
+footer {
+    margin-top: 10px;
+    padding: 10%;
+    text-align: center;
+
+}
