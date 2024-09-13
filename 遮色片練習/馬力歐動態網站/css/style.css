@@ -203,22 +203,97 @@ main section {
   width: 60%;
   top: 15vh;
   left: -7%;
+  animation: mariol2 12s 4s ease-in-out both infinite;
+}
+@keyframes mariol2 {
+  0% {
+    top: 100vh;
+    left: -7%;
+  }
+  10% {
+    top: 15vh;
+    left: -7%;
+  }
+  20% {
+    top: 15vh;
+    left: -7%;
+  }
+  30% {
+    top: 100vh;
+    left: -7%;
+  }
+  100% {
+    top: 100vh;
+    left: -7%;
+  }
 }
 #banner .photo .peach {
   width: 35%;
-  top: 30vh;
+  top: 40vh;
   right: 25%;
+  animation: peach 12s 4.35s ease-in-out both infinite;
+}
+@keyframes peach {
+  0% {
+    top: 100vh;
+    right: 25%;
+  }
+  10% {
+    top: 40vh;
+    right: 25%;
+  }
+  20% {
+    top: 40vh;
+    right: 25%;
+  }
+  30% {
+    top: 100vh;
+    right: 25%;
+  }
+  100% {
+    top: 100vh;
+    right: 25%;
+  }
+}
+#banner .photo .pipe {
+  width: 60%;
+  animation: pipe 12s 4.5s ease-in-out both infinite;
+}
+@keyframes pipe {
+  0% {
+    top: 100vh;
+    right: 5%;
+  }
+  10% {
+    top: 10vh;
+    right: 5%;
+  }
+  20% {
+    top: 10vh;
+    right: 5%;
+  }
+  30% {
+    top: 100vh;
+    right: 5%;
+  }
+  100% {
+    top: 100vh;
+    right: 5%;
+  }
 }
 #banner .photo .mario3 {
   width: 80%;
   top: 20vh;
   left: -12%;
+  animation: mariol 12s 0s ease-in-out both infinite;
 }
 #banner .photo .toad {
   width: 35%;
   top: 30vh;
   right: 22%;
+  animation: mariol 12s 0.35s ease-in-out both infinite;
 }
 #banner .photo .star {
   width: 65%;
+  animation: star 12s 8.5s ease-in-out both infinite;
 }/*# sourceMappingURL=style.css.map */
