@@ -171,21 +171,46 @@ main {
             width: 80%;
             top: 20vh;
             left: -12%;
-            animation: mariol 12s 0s ease-in-out both infinite;
+            animation: mariol3 12s 8s ease-in-out both infinite;
         }
-
+        @keyframes mariol3 {
+            0% { top: 100vh; left: -12%;}
+            // 5.2s
+            10%{top: 20vh; left: -12%;}
+            // 6.4s在空中滯留
+            20%{top: 20vh; left: -12%;}
+            30%{top: 100vh; left: -12%;}
+            100% { top: 100vh; left: -12%;}
+        }
         .toad {
             width: 35%;
-            top: 30vh;
+            top: 40vh;
             right: 22%;
-            animation: mariol 12s 0.35s ease-in-out both infinite;
+            animation: toad 12s 8.35s ease-in-out both infinite;
+        }
+        @keyframes toad {
+            0% { top: 100vh;  right: 22%;}
+            // 5.2s
+            10%{top: 40vh;  right: 22%;}
+            // 6.4s在空中滯留
+            20%{top: 40vh;  right: 22%;}
+            30%{top: 100vh;  right: 22%;}
+            100% { top: 100vh;  right: 22%;}
         }
 
         .star {
             width: 65%;
             animation: star 12s 8.5s ease-in-out both infinite;
         }
-       
+        @keyframes star {
+            0% { top: 100vh;  right: 5%;}
+            // 1.2s
+            10%{top: 10vh;  right: 5%;}
+            // 2.4s在空中滯留
+            20%{top: 10vh;  right: 5%;}
+            30%{top: 100vh;  right: 5%;}
+            100% { top: 100vh;  right: 5%;}
+        }
 
     }
 }

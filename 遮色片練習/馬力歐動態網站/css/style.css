@@ -285,15 +285,81 @@ main section {
   width: 80%;
   top: 20vh;
   left: -12%;
-  animation: mariol 12s 0s ease-in-out both infinite;
+  animation: mariol3 12s 8s ease-in-out both infinite;
+}
+@keyframes mariol3 {
+  0% {
+    top: 100vh;
+    left: -12%;
+  }
+  10% {
+    top: 20vh;
+    left: -12%;
+  }
+  20% {
+    top: 20vh;
+    left: -12%;
+  }
+  30% {
+    top: 100vh;
+    left: -12%;
+  }
+  100% {
+    top: 100vh;
+    left: -12%;
+  }
 }
 #banner .photo .toad {
   width: 35%;
-  top: 30vh;
+  top: 40vh;
   right: 22%;
-  animation: mariol 12s 0.35s ease-in-out both infinite;
+  animation: toad 12s 8.35s ease-in-out both infinite;
+}
+@keyframes toad {
+  0% {
+    top: 100vh;
+    right: 22%;
+  }
+  10% {
+    top: 40vh;
+    right: 22%;
+  }
+  20% {
+    top: 40vh;
+    right: 22%;
+  }
+  30% {
+    top: 100vh;
+    right: 22%;
+  }
+  100% {
+    top: 100vh;
+    right: 22%;
+  }
 }
 #banner .photo .star {
   width: 65%;
   animation: star 12s 8.5s ease-in-out both infinite;
+}
+@keyframes star {
+  0% {
+    top: 100vh;
+    right: 5%;
+  }
+  10% {
+    top: 10vh;
+    right: 5%;
+  }
+  20% {
+    top: 10vh;
+    right: 5%;
+  }
+  30% {
+    top: 100vh;
+    right: 5%;
+  }
+  100% {
+    top: 100vh;
+    right: 5%;
+  }
 }/*# sourceMappingURL=style.css.map */
