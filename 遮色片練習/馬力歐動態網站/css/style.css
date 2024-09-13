@@ -120,15 +120,84 @@ main section {
   width: 55%;
   top: 10vh;
   left: -6%;
+  animation: mariol 12s 0s ease-in-out both infinite;
+}
+@keyframes mariol {
+  0% {
+    top: 100vh;
+    left: -6%;
+  }
+  10% {
+    top: 10vh;
+    left: -6%;
+  }
+  20% {
+    top: 10vh;
+    left: -6%;
+  }
+  30% {
+    top: 100vh;
+    left: -6%;
+  }
+  100% {
+    top: 100vh;
+    left: -6%;
+  }
 }
 #banner .photo .luigi {
   width: 45%;
   right: 15%;
   top: 25vh;
+  animation: luigi 12s 0.35s ease-in-out both infinite;
+}
+@keyframes luigi {
+  0% {
+    top: 100vh;
+    right: 15%;
+  }
+  10% {
+    top: 25vh;
+    right: 15%;
+  }
+  20% {
+    top: 25vh;
+    right: 15%;
+  }
+  30% {
+    top: 100vh;
+    right: 15%;
+  }
+  100% {
+    top: 100vh;
+    right: 15%;
+  }
 }
 #banner .photo .brick {
   width: 60%;
   right: -5%;
+  animation: brick 12s 0.5s ease-in-out both infinite;
+}
+@keyframes brick {
+  0% {
+    top: 5vh;
+    right: -5%;
+  }
+  10% {
+    top: 5vh;
+    right: -5%;
+  }
+  20% {
+    top: 5vh;
+    right: -5%;
+  }
+  30% {
+    top: 5vh;
+    right: -100%;
+  }
+  100% {
+    top: 5vh;
+    right: -100%;
+  }
 }
 #banner .photo .mario2 {
   width: 60%;
