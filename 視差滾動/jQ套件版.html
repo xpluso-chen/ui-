@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>視差滾動示範</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        .section {
+            height: 100vh;
+            position: relative;
+        }
+
+        /* 大山背景 */
+        .mountain {
+            background-image: url('https://img.amiami.com/images/product/main/233/GOODS-04386693.jpg');
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* 太陽 */
+        .sun {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            border-radius: 50%;
+            top: -150px;
+            /* 太陽初始位置在視野外 */
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 1;
+        }
+
+        /* 鳥 */
+        .bird {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-image: url('./image/木屐.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            top: -100px;
+            /* 鳥初始位置在視野外 */
+            right: 500px;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="section mountain"></div> <!-- 大山背景 -->
+
+    <div class="section">
+        <div class="sun"></div> <!-- 太陽 -->
+        <div class="bird"></div> <!-- 鳥 -->
+    </div>
+
+    <div class="section"></div> <!-- 其他內容區塊 -->
+    <div class="section mountain"></div> <!-- 大山背景 -->
+
+    <!-- 引入 jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 檢測滾動事件
+            $(window).scroll(function () {
+                var scrollPos = $(window).scrollTop();
+                var windowHeight = $(window).height();
+
+                // 讓太陽出現
+                if (scrollTop > 500 && scrollTop < 1000) {
+                    $('.sun').css({
+                        'left': '70%',  // 太陽移動
+                        'opacity': 1    // 顯示太陽
+                    });
+                }
+
+                // 讓鳥飛向太陽
+                if (scrollTop > 1000) {
+                    $('.bird').css({
+                        'opacity': 1,
+                        'bottom': '50%',  // 鳥向上飛
+                        'right': '50%',   // 鳥向左飛
+                        'transform': 'translate(50%, -50%)'  // 定位到太陽位置
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

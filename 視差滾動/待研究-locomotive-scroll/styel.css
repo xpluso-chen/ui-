@@ -1,0 +1,106 @@
+html,body{
+    padding:0;
+    margin:0;
+  }
+  
+  h1,
+  h2 {
+    position: relative;
+    text-align: center;
+    margin:10px 0;
+  }
+  
+  p {
+    text-align: center;
+  }
+  
+  #scroll-zone{
+    padding-bottom:50px;
+  }
+  
+  
+  img.hero-image{
+    width: 100%;
+    display:block;
+    margin:auto;
+    opacity:1;
+  }
+  
+  
+  header {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    top: 0;
+    position:relative;
+    z-index:999;
+    height:60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header-titles{
+    position:absolute;
+    width:100%;
+    top:0px;
+    z-index:998;
+  }
+  
+  .title-container {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #efefef;
+    position:relative;
+    padding-top:100px;
+    padding-bottom:80px;
+  }
+  
+  #scene-one{
+    display:flex;
+    justify-content:center;
+    padding:50px 0;
+  }
+  
+  #scene-one img{
+    width:30%;
+  }
+  
+  #scene-two{
+    padding:50px 0;
+    display:grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap:10px;
+  }
+  
+  #scene-two img{
+    max-width:100%;
+    opacity: 0;
+    transition:opacity .7s ease;
+  }
+  
+  #scene-two img.is-inview{
+    opacity: 1;
+  }
+  
+  .banner{
+    background-color:#000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#FFF;
+  }
+  
+  .banner h1{
+    font-size:60px;
+    opacity:0;
+    transition:opacity .7s ease;
+  }
+  
+  .banner h1.is-inview{
+    opacity: 1;
+  }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 視差滾動示範</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .parallax {
+            /* 背景圖片屬性 */
+            background-image: url('https://img.amiami.com/images/product/main/233/GOODS-04386693.jpg');
+            height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .content {
+            height: 500px;
+            padding: 20px;
+            background-color: white;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="parallax"></div>
+
+    <div class="content">
+        <p>這是一些內容。</p>
+    </div>
+
+    <div class="parallax"></div>
+
+    <div class="content">
+        <p>這是更多的內容。</p>
+    </div>
+
+</body>
+</html>
