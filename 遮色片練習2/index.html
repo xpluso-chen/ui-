@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .img_area {
+    position: relative;
+    width: 73.3%;
+    -webkit-clip-path: polygon(0 0, 100% 0%, 60% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0%, 60% 100%, 0% 100%);
+    background: #000;
+    z-index: 10;
+    margin-bottom: 1rem;
+    aspect-ratio: 1.7529 / 1;
+}
+
+.inr {
+    position: absolute;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    top: -10px;
+    left: -35px;
+    /* 用px去設定，好處是不會因為大小改變，如果是%間距就會改變 */
+    -webkit-clip-path: polygon(0 0, 100% 0%, 60% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0%, 60% 100%, 0% 100%);
+}
+
+.fit_img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    background-position: center center;
+    background-size: cover;
+    z-index: 1;
+    -webkit-transition: -webkit-transform ease .4s;
+    transition: -webkit-transform ease .4s;
+    transition: transform ease .4s;
+    transition: transform ease .4s, -webkit-transform ease .4s;
+}
+    </style>
+</head>
+
+<body>
+    <div class="img_area">
+        <figure class="inr"><img src="https://tracksession.jp/event/wp-content/uploads/2023/12/kawasemi_thum.jpg"
+                class="fit_img" loading="lazy"></figure>
+    </div>
+</body>
+
+</html>
