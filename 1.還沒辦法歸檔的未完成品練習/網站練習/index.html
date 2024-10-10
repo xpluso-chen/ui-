@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(255, 130, 57);
+        }
+
+        a {
+            text-decoration: none;
+
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+
+        nev {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left-nev,
+        .right-nev {
+            display: flex;
+
+        }
+
+        .left-nev ul {
+            display: flex;
+        }
+
+        .left-nev li {
+            padding: 0 0.5rem;
+        }
+
+        .left-nev a {
+            color: rgb(62, 58, 57);
+            font-weight: 700;
+        }
+
+
+        .nev-btn {
+            display: flex;
+            align-items: center;
+            padding: 0 0.5rem;
+            background-color: aliceblue;
+            border-radius: 99px;
+            margin: 0 0.3rem;
+        }
+
+        .nev-icon {
+            height: 16px;
+            width: 16px;
+
+        }
+
+
+        .icon-search {
+            background-image: url('./icon--search.svg');
+            position: relative;
+
+        }
+
+        .icon-search-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 16px;
+            width: 16px;
+            content: "";
+            background-color: aliceblue;
+            z-index: -1;
+            border-radius: 50%;
+        }
+
+        .icon-account {
+            background-image: url('./icon--account.svg');
+        }
+
+        .icon-clips {
+            background-image: url('./icon--clips.svg');
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nev class="nev">
+            <div class="left-nev">
+                <div class="menw"></div>
+                <ul>
+                    <li class="navTarget"><a href="">物件</a></li>
+                    <li class="navTarget"><a href="">特集</a></li>
+                    <li class="navTarget"><a href="">ショップ</a></li>
+                    <li class="navTarget"><a href="">アイテム</a></li>
+                    <li class="navTarget"><a href="">コンセプト</a></li>
+                </ul>
+            </div>
+            <div class="right-nev">
+                <div class="nev-btn">
+                    <div class="nev-icon icon-search">
+                        <div class="icon-search-bg"></div>
+                    </div>
+                </div>
+                <div class="nev-btn">
+                    <div class="nev-icon icon-account"></div>
+                    <p>LOGIN</p>
+                </div>
+                <div class="nev-btn">
+                    <div class="nev-icon icon-clips"></div>
+                    <p>MY CLIPS</p>
+                </div>
+            </div>
+        </nev>
+    </header>
+
+
+</body>
+
+</html>
