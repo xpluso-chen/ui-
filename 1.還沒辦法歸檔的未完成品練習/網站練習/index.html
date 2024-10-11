@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <style>
         body {
             background-color: rgb(255, 130, 57);
@@ -13,7 +14,6 @@
 
         a {
             text-decoration: none;
-
         }
 
         ul,
@@ -21,63 +21,57 @@
             list-style: none;
         }
 
-
-        nev {
+        nav {
             display: flex;
             justify-content: space-between;
         }
 
-        .left-nev,
-        .right-nev {
-            display: flex;
-
-        }
-
-        .left-nev ul {
+        .left-nav,
+        .right-nav {
             display: flex;
         }
 
-        .left-nev li {
+        .left-nav ul {
+            display: flex;
+        }
+
+        .left-nav li {
             padding: 0 0.5rem;
         }
 
-        .left-nev a {
+        .left-nav a {
             color: rgb(62, 58, 57);
             font-weight: 700;
         }
 
-
-        .nev-btn {
+        .nav-btn {
             display: flex;
             align-items: center;
             padding: 0 0.5rem;
             background-color: aliceblue;
             border-radius: 99px;
-            margin: 0 0.3rem;
+            margin: 30px 0.3rem;
         }
 
-        .nev-icon {
+        .nav-icon {
             height: 16px;
             width: 16px;
-
         }
-
 
         .icon-search {
             background-image: url('./icon--search.svg');
-            position: relative;
-
+            z-index: 5;
         }
 
         .icon-search-bg {
-            position: absolute;
+            /* position: absolute;
             top: 0;
-            left: 0;
+            left: 0; */
             height: 16px;
             width: 16px;
             content: "";
-            background-color: aliceblue;
-            z-index: -1;
+            background-color: rgb(147, 185, 218);
+
             border-radius: 50%;
         }
 
@@ -93,9 +87,9 @@
 
 <body>
     <header>
-        <nev class="nev">
-            <div class="left-nev">
-                <div class="menw"></div>
+        <nav class="nav">
+            <div class="left-nav">
+                <div class="menu"></div>
                 <ul>
                     <li class="navTarget"><a href="">物件</a></li>
                     <li class="navTarget"><a href="">特集</a></li>
@@ -104,25 +98,24 @@
                     <li class="navTarget"><a href="">コンセプト</a></li>
                 </ul>
             </div>
-            <div class="right-nev">
-                <div class="nev-btn">
-                    <div class="nev-icon icon-search">
+            <div class="right-nav">
+                <div class="nav-btn">
+                    <!-- <img src="./icon--search.svg" alt="" class="nav-icon"> -->
+                    <div class="nav-icon icon-search">
                         <div class="icon-search-bg"></div>
                     </div>
                 </div>
-                <div class="nev-btn">
-                    <div class="nev-icon icon-account"></div>
+                <div class="nav-btn">
+                    <div class="nav-icon icon-account"></div>
                     <p>LOGIN</p>
                 </div>
-                <div class="nev-btn">
-                    <div class="nev-icon icon-clips"></div>
+                <div class="nav-btn">
+                    <div class="nav-icon icon-clips"></div>
                     <p>MY CLIPS</p>
                 </div>
             </div>
-        </nev>
+        </nav>
     </header>
-
-
 </body>
 
 </html>
