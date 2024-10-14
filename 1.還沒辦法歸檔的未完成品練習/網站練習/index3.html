@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #016daf;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2% 5%;
+        }
+
+        .nav-right {
+            display: flex;
+            /* margin-left: 16%; */
+
+        }
+
+        .logo img {
+            width: 10rem;
+            height: auto;
+        }
+
+
+        .menu-box {
+            display: flex;
+            align-items: center;
+            border: #FFF 2px solid;
+            border-radius: 99px;
+            color: #fff;
+            font-weight: 500;
+            margin: 0 0.2rem;
+        }
+
+        /* 導覽列 */
+        .menu {
+            color: #fff;
+            font-size: 0.8rem;
+            padding: 0.5rem 1rem;
+            position: relative;
+        }
+
+        .menu:nth-child(1) {
+            margin-left: 0.8rem;
+        }
+
+        .menu:nth-last-child(1) {
+            margin-right: 0.8rem;
+        }
+
+        .menu:hover::after {
+            content: "";
+            position: absolute;
+            top: 10%;
+            left: 0;
+            width: 100%;
+            height: 80%;
+            background-color: #82a0a0;
+            border-radius: 99px;
+            z-index: -1;
+
+        }
+
+        /* 選擇語言 */
+        .lang {
+            font-size: 0.8rem;
+            padding: 0.5rem 0.1rem;
+        }
+
+        .lang-l {
+            margin-left: 0.8rem;
+        }
+
+        .lang-r {
+            margin-right: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo"><img src="https://www.topcon.co.jp/dx/elements/logo.svg" alt=""></div>
+        <div class="nav-right">
+            <div class="menu-box">
+                <a href="#" class="menu">
+                    <div></div>Home
+                </a>
+                <a href="#" class="menu">
+                    <div>Healthcare</div>
+                </a>
+                <a href="#" class="menu">
+                    <div>Agriculture</div>
+                </a>
+                <a href="#" class="menu">
+                    <div>Infrastructure</div>
+                </a>
+                <a href="#" class="menu">
+                    <div>Contents</div>
+                </a>
+            </div>
+            <div class="menu-box">
+                <span class="lang lang-l">JPN</span>
+                <span>/</span>
+                <span class="lang lang-r">ENG</span>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
