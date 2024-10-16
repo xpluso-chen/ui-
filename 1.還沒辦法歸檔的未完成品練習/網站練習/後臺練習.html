@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>後臺練習</title>
+
+
+  <style>
+    body {
+      margin: 0;
+      /* 移除和grid間預設的空隙 */
+    }
+
+    div {
+      width: 100%;
+      height: auto;
+    }
+
+    .grid {
+      display: grid;
+      height: 100vh;
+      grid-template-columns: 6% 47% 47%;
+      grid-template-rows: 1fr 2fr 2fr;
+      /* 因為height: 100vh;用比例切他會自己調整 */
+      grid-template-areas:
+        'nav header header'
+        'nav main rightbar'
+        'nav footerL footerR';
+      column-gap: 0rem;
+      row-gap: 0rem;
+    }
+
+    .page-header {
+      grid-area: header;
+    }
+
+    .page-rightbar {
+      grid-area: rightbar;
+
+    }
+
+    .page-main {
+      grid-area: main;
+    }
+
+
+    .content {
+      color: #484848;
+      background-color: #ffffff;
+      font-weight: 600;
+      text-align: center;
+      box-sizing: border-box;
+      height: 100%;
+
+    }
+
+    .nav {
+      display: flex;
+      justify-content: flex-start;
+      grid-area: nav;
+      height: 100%;
+      align-items: center;
+      flex-direction: column;
+      background-color: #84d676;
+    }
+
+    .nav figure,
+    .nav img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .box {
+      display: flex;
+      justify-content: flex-start;
+      background-color: rgba(184, 184, 184, 0.2);
+      border-top: solid 1.5px rgba(184, 184, 184, 0.8);
+
+    }
+
+    .head {
+      margin: 10px 40px;
+      font-size: 20px;
+    }
+
+    .inf {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      margin: 30px 60px;
+
+    }
+
+    .inf::before {
+      position: absolute;
+      top: 0px;
+      left: -20px;
+      content: "";
+      width: 4px;
+      height: 100%;
+    }
+
+    .inf::before {
+      background-color: #84d676;
+    }
+
+    .inf:nth-child(2)::before {
+      background-color: #368aff;
+    }
+
+    .inf:nth-child(3)::before {
+      background-color: #84d676;
+    }
+
+    .inf:nth-child(4)::before {
+      background-color: #ff5036;
+    }
+
+    .inf:nth-child(5)::before {
+      background-color: #84d676;
+    }
+
+    .inf:nth-child(6)::before {
+      background-color: #ff5036;
+    }
+
+
+    .inf p {
+      margin: 0;
+    }
+
+    .inf p:nth-child(1) {
+      font-size: 30px;
+    }
+
+    /* 第三部分 */
+    .footerL {
+      grid-area: footerL;
+    }
+
+    .footerR {
+      grid-area: footerR;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footerR-box {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+
+    .chart {
+      flex: 1;
+      
+    }
+    
+
+    .pie {
+      
+      height: 80%;
+      background-color: #84d676;
+    }
+
+    .chart p {
+      display: flex;
+      text-align: center;
+      
+      height: 20%;
+      margin: 0;
+      padding-top:0.5rem ;
+      font-size: 1rem;
+      /* align-items: center; */
+      justify-content: center;
+      flex-wrap: wrap; /* 讓文字換行 */
+  word-wrap: break-word; /* 當文字超過容器寬度時自動換行 */
+  word-break: break-all; /* 可以讓整個單詞在任何地方斷行 */
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+
+  <div class="grid">
+
+    <header class="page-header">
+
+      <p class="head">功能名稱</p>
+      <div class="box">
+        <div class="inf">
+          <p>321</p>
+          <p>Lorem ipsum</p>
+        </div>
+        <div class="inf">
+          <p>321</p>
+          <p>sit ameteee</p>
+        </div>
+
+        <div class="inf">
+          <p>321</p>
+          <p>ipsum dolor</p>
+        </div>
+        <div class="inf">
+          <p>321</p>
+          <p>Lorem ipsum</p>
+        </div>
+        <div class="inf">
+          <p>321</p>
+          <p>ipsum dolor</p>
+        </div>
+        <div class="inf">
+          <p>321</p>
+          <p>ipsum dolor</p>
+        </div>
+      </div>
+
+    </header>
+
+    <nav class="nav">
+      <figure><img src="./icon--clips.svg" alt=""></figure>
+      <figure><img src="./icon--account.svg" alt=""></figure>
+      <figure><img src="./icon--ins.svg" alt=""></figure>
+      <figure><img src="./icon--search.svg" alt=""></figure>
+    </nav>
+
+    <aside class="page-rightbar">
+      <p class="head">功能名稱</p>
+    </aside>
+    <main class="page-main">
+      <p class="head">功能名稱</p>
+
+
+    </main>
+
+    <div class="footerL">
+      <p class="head">功能名稱</p>
+      <p>Footer</p>
+    </div>
+    <div class="footerR">
+      <p class="head">功能名稱</p>
+      <div class="footerR-box">
+        <div class="chart">
+          <div class="pie"></div>
+          <p>12315648461235468494564645645646545654654564645645646456456465</p>
+        
+        </div>
+        <div class="chart">
+          <div class="pie"></div>
+          <p>1231564846</p>
+        </div>
+        <div class="chart">
+          <div class="pie"></div>
+          <p>1231564846</p>
+        </div>
+        <div class="chart">
+          <div class="pie"></div>
+          <p>1231564846</p>
+        </div>
+        
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
