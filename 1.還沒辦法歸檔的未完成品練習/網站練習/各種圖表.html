@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>各種圖表</title>
+    <!-- 引入 jQuery 庫 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* 長條圖樣式 */
+        .bar-chart {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            width: 200px;
+            height: 100px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        .bar {
+            width: 20px;
+            background-color: #4CAF50;
+        }
+
+        /* 折線圖樣式 */
+        .line-chart {
+            position: relative;
+            width: 200px;
+            height: 100px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+
+        .axis-x,
+        .axis-y {
+            position: absolute;
+            background-color: #000;
+        }
+
+        .axis-x {
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+        }
+
+        .axis-y {
+            bottom: 0;
+            left: 0;
+            width: 2px;
+            height: 100%;
+        }
+
+        .point {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        /* 圓餅圖樣式 */
+        .pie-chart {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            overflow: hidden;
+            clip-path: circle(50%);
+        }
+
+        .slice {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+            transform-origin: 50% 50%;
+        }
+
+        .slice:nth-child(1) {
+            background-color: #ff6384;
+        }
+
+        .slice:nth-child(2) {
+            background-color: #36a2eb;
+        }
+
+        .slice:nth-child(3) {
+            background-color: #cc65fe;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="chart1"></div> <!-- 長條圖 -->
+    <div id="chart2"></div> <!-- 折線圖 -->
+    <div id="chart3"></div> <!-- 圓餅圖 -->
+
+    <script>
+        // 長條圖
+        $(document).ready(function () {
+            var data = [5, 10, 15, 20, 25]; // 模擬數據
+
+            var chart = $('<div class="bar-chart"></div>'); // 創建柱狀圖容器
+            $('#chart1').append(chart);
+
+            // 遍歷數據，生成每一個柱子
+            for (var i = 0; i < data.length; i++) {
+                var bar = $('<div class="bar"></div>').css('height', data[i] * 4 + 'px'); // 乘以 4 放大顯示效果
+                chart.append(bar);
+            }
+
+            // 折線圖
+            function createLineChart() {
+                var lineData = [
+                    { x: 0, y: 10 },
+                    { x: 1, y: 15 },
+                    { x: 2, y: 5 },
+                    { x: 3, y: 20 },
+                    { x: 4, y: 12 }
+                ];//模擬數據
+
+                var lineChart = $('<div class="line-chart"></div>');//創建折線圖容器
+                $('#chart2').append(lineChart);
+
+                //生成坐標軸
+                var axisX = $('<div class="axis-x"></div>');
+                var axisY = $('<div class="axis-y"></div>');
+                lineChart.append(axisX).append(axisY);
+
+                // 根據數據生成折線點
+                for (var i = 0; i < lineData.length; i++) {
+                    var point = $('<div class="point"></div>')
+                        .css('left', (lineData[i].x * 25) + '%') // 計算 x 軸位置
+                        .css('bottom', lineData[i].y * 4 + 'px'); // 計算 y 軸位置
+                    lineChart.append(point);
+                }
+            }
+            createLineChart(); // 呼叫折線圖生成函數
+
+            // 圓餅圖
+        function createPieChart() {
+            var pieData = [
+                { label: 'A', value: 20 }, // A 佔 20%
+                { label: 'B', value: 30 }, // B 佔 30%
+                { label: 'C', value: 50 }  // C 佔 50%
+            ];
+
+            var pieChart = $('<div class="pie-chart"></div>'); // 創建圓餅圖容器
+            $('#chart3').append(pieChart);
+
+            var sum = pieData.reduce(function (prev, current) {
+                return prev + current.value;
+            }, 0); // 計算數據總和 (100%)
+
+            var startAngle = 0; // 初始角度為 0
+
+            pieData.forEach(function (sliceData, index) {
+                var sliceAngle = (sliceData.value / sum) * 360; // 根據比例計算每個分片的角度
+                var slice = $('<div class="slice"></div>').css({
+                    'transform': 'rotate(' + startAngle + 'deg) skewY(' + (90 - sliceAngle / 2) + 'deg)'
+                });
+
+                pieChart.append(slice);
+                startAngle += sliceAngle; // 更新起始角度
+            });
+        }
+
+        createPieChart();  // 呼叫圓餅圖生成函數
+        // 圓餅圖待改https://www.oxxostudio.tw/articles/201409/svg-24-jquery-pie-chart.html
+        });
+    </script>
+
+</body>
+
+</html>
