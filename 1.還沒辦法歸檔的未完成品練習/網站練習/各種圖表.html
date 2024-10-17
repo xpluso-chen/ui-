@@ -146,36 +146,85 @@
             createLineChart(); // 呼叫折線圖生成函數
 
             // 圓餅圖
-        function createPieChart() {
-            var pieData = [
-                { label: 'A', value: 20 }, // A 佔 20%
-                { label: 'B', value: 30 }, // B 佔 30%
-                { label: 'C', value: 50 }  // C 佔 50%
+            function makeSVG(tag, attrs) {
+                var el = document.createElementNS('http://www.w3.org/2000/svg', tag);
+                for (var k in attrs)
+                    el.setAttribute(k, attrs[k]);
+                return el;
+            }
+
+            var i, j, path, x0, y0, x1, y1, aa, cc, bb = 0;
+            var all = 0;
+            var cx = 90;
+            var cy = 90;
+            var r = 70;
+            var data = [
+                { num: 30, fill: '#f00' },
+                { num: 50, fill: '#0f0' },
+                { num: 20, fill: '#c0c' }
             ];
 
-            var pieChart = $('<div class="pie-chart"></div>'); // 創建圓餅圖容器
-            $('#chart3').append(pieChart);
+            // 計算所有數值的總和
+            for (i = 0; i < data.length; i++) {
+                all += data[i].num;
+            }
 
-            var sum = pieData.reduce(function (prev, current) {
-                return prev + current.value;
-            }, 0); // 計算數據總和 (100%)
+            // 建立SVG元素
+            var svg = makeSVG('svg', { width: 180, height: 180 });
+            $('#chart3').append(svg);
 
-            var startAngle = 0; // 初始角度為 0
+            // 逐一畫出每個分片
+            for (j = 0; j < data.length; j++) {
+                if (j === 0) {
+                    x0 = cx + r * Math.cos((0 * Math.PI) / 180);
+                    y0 = cy + r * Math.sin((0 * Math.PI) / 180);
+                    bb += data[0].num;
+                    cc = (bb / all) * 360;
+                    x1 = cx + r * Math.cos((cc * Math.PI) / 180);
+                    y1 = cy + r * Math.sin((cc * Math.PI) / 180);
+                } else {
+                    x0 = cx + r * Math.cos((cc * Math.PI) / 180);
+                    y0 = cy + r * Math.sin((cc * Math.PI) / 180);
+                    bb += data[j].num;
+                    cc = (bb / all) * 360;
+                    x1 = cx + r * Math.cos((cc * Math.PI) / 180);
+                    y1 = cy + r * Math.sin((cc * Math.PI) / 180);
+                }
 
-            pieData.forEach(function (sliceData, index) {
-                var sliceAngle = (sliceData.value / sum) * 360; // 根據比例計算每個分片的角度
-                var slice = $('<div class="slice"></div>').css({
-                    'transform': 'rotate(' + startAngle + 'deg) skewY(' + (90 - sliceAngle / 2) + 'deg)'
+                // 檢查弧度是否大於180度
+                if ((data[j].num / all * 360) > 180) {
+                    aa = 'M' + cx + ' ' + cy + ' L' + x0 + ' ' + y0 + ' A' + r + ' ' + r + ' 0 1 1 ' + x1 + ' ' + y1 + ' Z';
+                } else {
+                    aa = 'M' + cx + ' ' + cy + ' L' + x0 + ' ' + y0 + ' A' + r + ' ' + r + ' 0 0 1 ' + x1 + ' ' + y1 + ' Z';
+                }
+
+                // 建立每個分片的path
+                path = makeSVG('path', {
+                    d: aa,
+                    fill: data[j].fill,
+                    stroke: '#fff',
+                    'stroke-width': 2
                 });
+                svg.appendChild(path);
 
-                pieChart.append(slice);
-                startAngle += sliceAngle; // 更新起始角度
-            });
-        }
+                // 滑鼠移上去效果
+                $('path').hover(function () {
+                    $(this).css({
+                        'opacity': '.4',
+                        'transition': 'all .3s linear'
+                    });
+                }, function () {
+                    $(this).css({
+                        'transform': 'scale(1)',
+                        'opacity': '1'
+                    });
+                });
+            }
 
-        createPieChart();  // 呼叫圓餅圖生成函數
-        // 圓餅圖待改https://www.oxxostudio.tw/articles/201409/svg-24-jquery-pie-chart.html
+
         });
+
+
     </script>
 
 </body>

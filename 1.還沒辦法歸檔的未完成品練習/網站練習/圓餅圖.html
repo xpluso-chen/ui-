@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pie Chart Example</title>
+    <style>
+        svg {
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div id="qq"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            function makeSVG(tag, attrs) {
+                var el = document.createElementNS('http://www.w3.org/2000/svg', tag);
+                for (var k in attrs)
+                    el.setAttribute(k, attrs[k]);
+                return el;
+            }
+
+            var i, j, path, x0, y0, x1, y1, aa, cc, bb = 0;
+            var all = 0;
+            var cx = 90;
+            var cy = 90;
+            var r = 70;
+            var data = [
+                { num: 30, fill: '#f00' }, 
+                { num: 50, fill: '#0f0' }, 
+                { num: 20, fill: '#c0c' }
+            ];
+
+            // 計算所有數值的總和
+            for (i = 0; i < data.length; i++) {
+                all += data[i].num;
+            }
+
+            // 建立SVG元素
+            var svg = makeSVG('svg', { width: 180, height: 180 });
+            $('#qq').append(svg);
+
+            // 逐一畫出每個分片
+            for (j = 0; j < data.length; j++) {
+                if (j === 0) {
+                    x0 = cx + r * Math.cos((0 * Math.PI) / 180);
+                    y0 = cy + r * Math.sin((0 * Math.PI) / 180);
+                    bb += data[0].num;
+                    cc = (bb / all) * 360;
+                    x1 = cx + r * Math.cos((cc * Math.PI) / 180);
+                    y1 = cy + r * Math.sin((cc * Math.PI) / 180);
+                } else {
+                    x0 = cx + r * Math.cos((cc * Math.PI) / 180);
+                    y0 = cy + r * Math.sin((cc * Math.PI) / 180);
+                    bb += data[j].num;
+                    cc = (bb / all) * 360;
+                    x1 = cx + r * Math.cos((cc * Math.PI) / 180);
+                    y1 = cy + r * Math.sin((cc * Math.PI) / 180);
+                }
+
+                // 檢查弧度是否大於180度
+                if ((data[j].num / all * 360) > 180) {
+                    aa = 'M' + cx + ' ' + cy + ' L' + x0 + ' ' + y0 + ' A' + r + ' ' + r + ' 0 1 1 ' + x1 + ' ' + y1 + ' Z';
+                } else {
+                    aa = 'M' + cx + ' ' + cy + ' L' + x0 + ' ' + y0 + ' A' + r + ' ' + r + ' 0 0 1 ' + x1 + ' ' + y1 + ' Z';
+                }
+
+                // 建立每個分片的path
+                path = makeSVG('path', {
+                    d: aa,
+                    fill: data[j].fill,
+                    stroke: '#fff',
+                    'stroke-width': 2
+                });
+                svg.appendChild(path);
+                // 滑鼠移上去會變透明
+                $('path').hover(function () {
+                    $(this).css({
+                        'opacity': '.5'
+                    });
+                }, function () {
+                    $(this).css({
+                        'opacity': '1'
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
