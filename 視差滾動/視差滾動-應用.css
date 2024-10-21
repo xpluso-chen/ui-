@@ -1,0 +1,62 @@
+body{background: url('./背景顆粒.png');}
+.block{
+  height: 80vh;
+  width: 100%;
+  background-color: rgb(141, 39, 39);
+}
+
+/* 以下是視差滾度-現在只有辦法微微晃動 */
+.parallax {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.parallaxLayer1 {
+  position: absolute;
+  top: 100px;
+  left: 1%;
+}
+.parallaxLayer1 img{
+  /* 和服 */
+  width: 50%;
+  height: auto;
+}
+
+.parallaxLayer2 {
+  position: absolute;
+  top: -100px;
+  left: 10%;
+  
+}
+.parallaxLayer2 img{
+  /* 木屐 */
+  width: 50%;
+  height: auto;
+}
+
+.parallaxLayer3 {
+  position: absolute;
+  top: 200px;
+  left: 50%; 
+}
+.parallaxLayer3 .text{
+  flex-wrap: wrap;
+  width: 80%;
+  height: 50vh;
+}
+
+/* translateZ()用來設定不同的深度
+其中0表示在基礎層，-1px和-2px表示更深的層次。
+深度越深，滾動時移動的速度越慢。
+scale()則用來放大視差層，這樣當它在更遠的深度時，還能佔滿整個視覺區域，保持視覺連貫性。 */
+/* 視差層會放大，模擬了遠景或背景元素更大、更遠的效果。這樣即使它們移動得較慢 */
+.parallaxLayerBase {
+  transform: translateZ(0);
+}
+.parallaxLayerBack {
+  transform: translateZ(-1px) scale(2);
+}
+.parallaxLayerDeep {
+  transform: translateZ(-2px) scale(5);
+}
