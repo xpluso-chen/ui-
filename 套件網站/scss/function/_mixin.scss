@@ -21,7 +21,7 @@
     overflow: hidden;
     text-overflow: ellipsis;display: -webkit-box;
     -webkit-box-orient: vertical;
-    // -webkit-line-clamp: 5;
+    -webkit-line-clamp: 5;
 }
 @mixin single-ellipsis{
     /* 單行省略 */

@@ -180,4 +180,28 @@ footer {
   margin-top: 10px;
   padding: 10%;
   text-align: center;
+}
+
+.last-box {
+  width: 100%;
+  height: 20%;
+  background-color: rgba(220, 185, 185, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+.last-box img {
+  width: 100px;
+  height: auto;
+}
+.last-box .text-content {
+  text-align: justify;
+  /* 多行省略 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  margin-left: 15px;
 }/*# sourceMappingURL=style.css.map */
