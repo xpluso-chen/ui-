@@ -1,0 +1,68 @@
+@use '_reset';
+@use "./function/mixin" as *;
+@use "./function/animation" as *;
+@use "./function/extend" as *;
+
+@use "./variables/color" as *;
+@use "./variables/size" as *;
+@use "./variables/font" as *;
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap');
+// 字體
+
+body {
+    position: relative;
+    @extend %bg-red;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    
+    font-style: normal;
+
+    nav {
+        @include flex-right;
+        font-size: map-get($font-size, xs);
+        font-weight: map-get($font-weight, bold );
+        .nav-list {
+            display: inline-flex; //內容物自適應大小
+            margin-top: map-get($interval, m);
+            margin-right: map-get($interval, m);
+            gap: map-get($interval, m);
+            @extend %glassmorphism;
+
+
+            .nav-item {
+
+                a {
+                    @include flex-column;
+                    align-items: center;
+                    color: map-get($color, primary-black); // 確保 $color 已定義並包含 'black'
+                    position: relative;
+                    padding: map-get($interval, s );
+
+                    &:hover {
+                        color: map-get($color, primary-hover);
+
+                        &::after {
+                            position: absolute;
+
+                        }
+                    }
+
+                    span {}
+
+                }
+
+            }
+
+        }
+    }
+
+
+    .test {
+        position: absolute;
+        @include flex-center;
+        width: 20%;
+        height: auto;
+        // 使用模組化的動畫
+        // @include animations.anime-test(10s, infinite); 
+        @extend %anime-test2;
+    }
+}

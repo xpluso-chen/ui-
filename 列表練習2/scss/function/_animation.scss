@@ -1,0 +1,38 @@
+// _animations.scss
+@keyframes anime-test {
+    0% {
+        background-color: aqua;
+        top: 0px;
+        left: 20px;
+    }
+
+    50% {
+        background-color: rgb(34, 156, 156);
+        top: 100px;
+        left: 200px;
+        color: rgb(226, 234, 241);
+    }
+
+    100% {
+        background-color: rgb(3, 62, 62);
+        top: 200px;
+        left: 500px;
+        color: aliceblue;
+    }
+}
+
+// 將動畫屬性模組化
+//  如果效果每次執行秒數不同，就用mixin
+@mixin anime-test($duration, $iteration) {
+    animation-name: anime-test;
+    animation-duration: $duration;
+    animation-iteration-count: $iteration;
+}
+
+//  如果執行秒數和次數固定，就直接用全部繼承
+%anime-test2 {
+    animation-name: anime-test;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+
+}

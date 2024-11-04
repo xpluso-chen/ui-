@@ -1,0 +1,216 @@
+@use '_reset';
+@use 'variables' as *;
+@use 'function' as *;
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap');
+
+body {
+    font-family: $font-family-en;
+    color: map-get($color, light);
+}
+
+.basic-btn {
+    display: inline-block;
+    @include basic-btn;
+}
+
+header {
+    position: fixed;
+}
+
+main {
+    @extend %flex-center;
+    flex-direction: column;
+
+    section {
+        @extend %flex-center;
+        width: 100%;
+        height: 100vh;
+
+    }
+}
+
+#banner {
+
+    // 圖超過就隱藏
+    overflow: hidden;
+
+    // 背景圖的排列順序，越前寫排序越上面
+    background-image: url('../images/bg-pattern-logos.png'), linear-gradient(165deg, map-get($color , primary-color)15%, map-get($color , lesser-1)75%);
+
+
+    // 第一層div
+    >div {
+        flex: 1;
+    }
+
+    .content {
+        h2 {
+            font-size: map-get($font-size , xxxl);
+            font-weight: 900;
+            line-height: 7rem;
+
+            span {
+                font-size: map-get($font-size , xl);
+                font-weight: 800;
+            }
+
+            p {
+                font-size: map-get($font-size , l);
+                line-height: map-get($font-size , l)*1.2;
+                margin-bottom: 5rem;
+            }
+        }
+    }
+
+    .photo {
+        position: relative;
+        height: 100%;
+        // 為了好算，所以讓高度展開到起點的位置
+
+        figure {
+            position: absolute;
+        }
+
+        // banner1
+        .mario {
+            width: 55%;
+            top: 10vh;
+            left: -6%;
+            animation: mariol 12s 0s ease-in-out both infinite;
+        }
+        @keyframes mariol {
+            0% { top: 100vh; left: -6%;}
+            // 1.2s
+            10%{top: 10vh; left: -6%;}
+            // 2.4s在空中滯留
+            20%{top: 10vh; left: -6%;}
+            30%{top: 100vh; left: -6%;}
+            100% { top: 100vh; left: -6%;}
+        }
+
+        .luigi {
+            width: 45%;
+            right: 15%;
+            top: 25vh;
+            animation: luigi 12s 0.35s ease-in-out both infinite;
+        }
+        @keyframes luigi {
+            0% { top: 100vh;  right: 15%;}
+            // 1.2s
+            10%{top: 25vh;  right: 15%;}
+            // 2.4s在空中滯留
+            20%{top: 25vh;  right: 15%;}
+            30%{top: 100vh;  right: 15%;}
+            100% { top: 100vh;  right: 15%;}
+        }
+
+        .brick {
+            width: 60%;
+            right: -5%;
+            animation: brick 12s 0.5s ease-in-out both infinite;
+        }
+        @keyframes brick {
+            0% { top: 5vh;  right: -5%;}
+            // 1.2s
+            10%{top: 5vh;  right: -5%;}
+            // 2.4s在空中滯留
+            20%{top: 5vh;  right: -5%;}
+            30%{top: 5vh;  right: -100%;}
+            100% { top: 5vh;  right: -100%;}
+        }
+
+        // banner2，延遲第一個4秒
+        .mario2 {
+            width: 60%;
+            top: 15vh;
+            left: -7%;
+            animation: mariol2 12s 4s ease-in-out both infinite;
+        }
+        @keyframes mariol2 {
+            0% { top: 100vh; left: -7%;}
+            // 5.2s
+            10%{top: 15vh; left: -7%;}
+            // 6.4s在空中滯留
+            20%{top: 15vh; left: -7%;}
+            30%{top: 100vh; left: -7%;}
+            100% { top: 100vh; left: -7%;}
+        }
+
+        .peach {
+            width: 35%;
+            top: 40vh;
+            right: 25%;
+            animation: peach 12s 4.35s ease-in-out both infinite;
+        }
+        @keyframes peach {
+            0% { top: 100vh;  right: 25%;}
+            // 5.2s
+            10%{top: 40vh;  right: 25%;}
+            // 6.4s在空中滯留
+            20%{top: 40vh;  right: 25%;}
+            30%{top: 100vh;  right: 25%;}
+            100% { top: 100vh;  right: 25%;}
+        }
+
+        .pipe{
+            width: 60%;
+            animation: pipe 12s 4.5s ease-in-out both infinite;
+        }
+        @keyframes pipe {
+            0% { top: 100vh;  right: 5%;}
+            // 1.2s
+            10%{top: 10vh;  right: 5%;}
+            // 2.4s在空中滯留
+            20%{top: 10vh;  right: 5%;}
+            30%{top: 100vh;  right: 5%;}
+            100% { top: 100vh;  right: 5%;}
+        }
+
+        // banner3
+        .mario3 {
+            width: 80%;
+            top: 20vh;
+            left: -12%;
+            animation: mariol3 12s 8s ease-in-out both infinite;
+        }
+        @keyframes mariol3 {
+            0% { top: 100vh; left: -12%;}
+            // 5.2s
+            10%{top: 20vh; left: -12%;}
+            // 6.4s在空中滯留
+            20%{top: 20vh; left: -12%;}
+            30%{top: 100vh; left: -12%;}
+            100% { top: 100vh; left: -12%;}
+        }
+        .toad {
+            width: 35%;
+            top: 40vh;
+            right: 22%;
+            animation: toad 12s 8.35s ease-in-out both infinite;
+        }
+        @keyframes toad {
+            0% { top: 100vh;  right: 22%;}
+            // 5.2s
+            10%{top: 40vh;  right: 22%;}
+            // 6.4s在空中滯留
+            20%{top: 40vh;  right: 22%;}
+            30%{top: 100vh;  right: 22%;}
+            100% { top: 100vh;  right: 22%;}
+        }
+
+        .star {
+            width: 65%;
+            animation: star 12s 8.5s ease-in-out both infinite;
+        }
+        @keyframes star {
+            0% { top: 100vh;  right: 5%;}
+            // 1.2s
+            10%{top: 10vh;  right: 5%;}
+            // 2.4s在空中滯留
+            20%{top: 10vh;  right: 5%;}
+            30%{top: 100vh;  right: 5%;}
+            100% { top: 100vh;  right: 5%;}
+        }
+
+    }
+}

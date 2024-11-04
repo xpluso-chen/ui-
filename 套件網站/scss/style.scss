@@ -261,6 +261,6 @@ footer {
     .text-content {
         text-align: justify;
         @include multiple-ellipsis;
-        margin-left: map-get($interval, l);
+        margin-left: map-get($interval, m);
     }
 }

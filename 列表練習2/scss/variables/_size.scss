@@ -1,0 +1,22 @@
+//響應式斷點
+$media-sm: 'max-width:640px';
+$media-md: 'min-width:768px';
+$media-lg: 'min-width:992px';
+
+// 間距 map-get( $interval ,  );
+$interval: (
+    s: 0.5rem,
+    m: 1rem,
+    l: 1.5rem,
+    xl:2rem,
+    xxl:2.5rem,
+);
+// 最大寬度
+$max-width: (
+    s: 800px,
+    m: 1000px,
+    l: 1200px,
+    xl: 1400px,
+    xxl: 1600px
+);
+

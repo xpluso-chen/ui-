@@ -1,0 +1,133 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* 所有的標籤拿掉內框和邊線累加，讓設計RWD更方便 */
+}
+
+/* 重置字體 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+}
+
+/*     重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  /* 拿掉預設的粗體*/
+}
+
+/* 重置列表 */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 重置圖片 */
+img {
+  display: block;
+  /* 因img單獨存在時會有一個預設間距 */
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 重置連接 */
+a {
+  text-decoration: none;
+}
+
+@keyframes anime-test {
+  0% {
+    background-color: aqua;
+    top: 0px;
+    left: 20px;
+  }
+  50% {
+    background-color: rgb(34, 156, 156);
+    top: 100px;
+    left: 200px;
+    color: rgb(226, 234, 241);
+  }
+  100% {
+    background-color: rgb(3, 62, 62);
+    top: 200px;
+    left: 500px;
+    color: aliceblue;
+  }
+}
+body .test {
+  animation-name: anime-test;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+body nav .nav-list {
+  backdrop-filter: blur(34px);
+  background: hsla(0, 0%, 100%, 0.3);
+  border-radius: 1.875rem;
+  padding: 0 0.75rem;
+}
+
+body {
+  backdrop-filter: blur(2px);
+  background: linear-gradient(270deg, #f88673, #cf2f33 54.28%);
+  background-image: linear-gradient(270deg, rgb(248, 134, 115), rgb(207, 47, 51) 54.28%);
+  bottom: 0;
+  left: 0;
+  mix-blend-mode: normal;
+  opacity: 1;
+  right: 0;
+  top: 0;
+  transition: 0.3s ease-out;
+  width: auto;
+}
+
+body {
+  position: relative;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-style: normal;
+}
+body nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+body nav .nav-list {
+  display: inline-flex;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  gap: 1rem;
+}
+body nav .nav-list .nav-item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #100e1d;
+  position: relative;
+  padding: 0.5rem;
+}
+body nav .nav-list .nav-item a:hover {
+  color: #cf2f33;
+}
+body nav .nav-list .nav-item a:hover::after {
+  position: absolute;
+}
+body .test {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: auto;
+}/*# sourceMappingURL=style.css.map */
