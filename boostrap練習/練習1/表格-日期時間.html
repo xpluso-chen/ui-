@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日期與時間表格</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        input[type="datetime-local"] {
+            padding: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>日期與時間填寫表格</h1>
+    <p>請選擇適合的日期與時間：</p>
+    <table>
+        <thead>
+            <tr>
+                <th>項目</th>
+                <th>日期與時間</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>會議時間</td>
+                <td><input type="datetime-local"></td>
+            </tr>
+            <tr>
+                <td>提交截止</td>
+                <td><input type="datetime-local"></td>
+            </tr>
+            <tr>
+                <td>提醒事項</td>
+                <td><input type="datetime-local"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
