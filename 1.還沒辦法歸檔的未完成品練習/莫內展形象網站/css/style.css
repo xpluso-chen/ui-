@@ -19,6 +19,18 @@ body::before {
 }
 body .text-title {
   font-size: 3rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
+body .text-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top: #111 2px solid;
+  border-bottom: #111 2px solid;
 }
 body .text-content-l {
   font-size: 1.5rem;
