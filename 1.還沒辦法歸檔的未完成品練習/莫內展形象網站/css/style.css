@@ -1,16 +1,6 @@
-.text-title {
-  font-size: 3rem;
-}
-
-.text-content-l {
-  font-size: 1.5rem;
-}
-
-.text-content-m {
-  font-size: 1rem;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Zen+Kaku+Gothic+New&display=swap");
 body {
+  font-family: "Inria Serif", serif !important;
   position: relative;
   background-color: #EEEEEC;
 }
@@ -26,6 +16,15 @@ body::before {
   background-position: center;
   opacity: 0.2;
   z-index: -1;
+}
+body .text-title {
+  font-size: 3rem;
+}
+body .text-content-l {
+  font-size: 1.5rem;
+}
+body .text-content-m {
+  font-size: 1rem;
 }
 body .navbar {
   position: fixed;
