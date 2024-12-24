@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Zen+Kaku+Gothic+New&display=swap");
 body {
   font-family: "Inria Serif", serif !important;
@@ -38,6 +39,10 @@ body .text-content-l {
 body .text-content-m {
   font-size: 1rem;
 }
+body section {
+  width: 100%;
+  height: 100dvh;
+}
 body .navbar {
   position: fixed;
   top: 0;
@@ -48,7 +53,7 @@ body #carouselExampleCaptions {
   width: 100%;
   height: 100dvh;
 }
-body #carouselExampleCaptions .carousel-inner {
+body #carouselExampleCaptions .banner-view {
   width: 100%;
   height: 100%;
 }
@@ -58,8 +63,87 @@ body #introduce2 {
   height: 100dvh;
   background-image: url(../images/img2-blue.jpg);
   background-size: cover;
+  color: #fff;
 }
 body #introduce2 #introduce-content2 {
   position: absolute;
   bottom: 0;
+}
+body .owl-slider {
+  /* 整個輪播 */
+  padding: 2rem;
+}
+body .owl-slider .owl-carousel {
+  /* 圖片們，用內距把按鈕推出去 */
+  padding: 0 50px;
+}
+body .owl-slider .owl-carousel .owl-nav button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.38);
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
+}
+body .owl-slider .owl-carousel .owl-nav button.owl-prev {
+  left: 0;
+}
+body .owl-slider .owl-carousel .owl-nav button.owl-next {
+  right: 0;
+}
+body .owl-slider .owl-carousel .owl-nav button:focus {
+  outline: none;
+}
+body .owl-slider .owl-carousel .owl-dots {
+  text-align: center;
+  padding-top: 15px;
+}
+body .owl-slider .owl-carousel .owl-dots button.owl-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  background: #ccc;
+  margin: 0 3px;
+}
+body .owl-slider .owl-carousel .owl-dots button.owl-dot.active {
+  background-color: #000;
+}
+body .owl-slider .owl-carousel .owl-item {
+  height: 300px !important;
+  display: flex;
+}
+body .owl-slider .owl-carousel .item {
+  height: 100%;
+  border: #111 2px solid;
+}
+body .owl-slider .owl-carousel .item img {
+  height: 100%;
+  object-fit: cover;
+}
+body .owl-slider .owl-carousel span {
+  font-size: 70px;
+  position: relative;
+  top: -5px;
+}
+
+.owl-item {
+  height: 300px !important;
+  display: flex;
+}
+
+.item {
+  width: 100%;
+}
+.item img {
+  height: 100%;
+  object-fit: cover;
+}
+
+span {
+  font-size: 70px;
+  position: relative;
+  top: -5px;
 }/*# sourceMappingURL=style.css.map */
