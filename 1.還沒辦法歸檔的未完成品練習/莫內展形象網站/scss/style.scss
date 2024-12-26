@@ -2,7 +2,9 @@
 // @use "extend" as *;
 // @use "mixin" as *;
 @use "variable" as *;
+@use "extend" as *;
 @use "mixin" as *;
+
 @import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Zen+Kaku+Gothic+New&display=swap');
 
 
@@ -44,16 +46,32 @@ body {
     .text-content-m {
         font-size: map-get($font-size, m);
     }
+    .flex-center{
+        display: flex;
+        justify-content: center;
+    }
 
-    // 寬度一半內容
-    .content {
+
+    // 寬度
+    section {
+        width: 100%;
+        @extend %flex-center;
+    }
+
+    .box-width {
+        width: 80%;
+        padding: map-get($interval, m) 0;
+        @extend %flex-center;
+    }
+
+    .article-width {
         width: 40%;
         letter-spacing: 1px;
     }
 
-
-    section {
-        width: 100%;
+    // 上下內距
+    .title-padding {
+        padding: map-get($interval, m) 0;
     }
 
 

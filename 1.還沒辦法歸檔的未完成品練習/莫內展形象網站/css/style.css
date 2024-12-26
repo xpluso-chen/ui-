@@ -1,5 +1,10 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Zen+Kaku+Gothic+New&display=swap");
+body section, body .box-width {
+  display: flex;
+  justify-content: center;
+}
+
 body {
   font-family: "Inria Serif", serif !important;
   position: relative;
@@ -19,9 +24,10 @@ body::before {
   z-index: -1;
 }
 body .title-black {
-  font-size: 3rem;
-  padding: 0.5rem 2rem;
+  font-size: 2rem;
+  padding: 0.5rem 3rem;
   position: relative;
+  color: #111;
 }
 body .title-black::before {
   content: "";
@@ -34,9 +40,10 @@ body .title-black::before {
   border-bottom: #111 2px solid;
 }
 body .title-white {
-  font-size: 3rem;
-  padding: 0.5rem 2rem;
+  font-size: 2rem;
+  padding: 0.5rem 3rem;
   position: relative;
+  color: white;
 }
 body .title-white::before {
   content: "";
@@ -54,12 +61,23 @@ body .text-content-l {
 body .text-content-m {
   font-size: 1rem;
 }
-body .content {
-  width: 40%;
-  letter-spacing: 1px;
+body .flex-center {
+  display: flex;
+  justify-content: center;
 }
 body section {
   width: 100%;
+}
+body .box-width {
+  width: 80%;
+  padding: 2.5rem 0;
+}
+body .article-width {
+  width: 40%;
+  letter-spacing: 1px;
+}
+body .title-padding {
+  padding: 2.5rem 0;
 }
 body .navbar {
   position: fixed;
