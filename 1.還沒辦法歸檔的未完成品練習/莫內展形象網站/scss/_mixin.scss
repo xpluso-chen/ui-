@@ -1,9 +1,10 @@
 @use "variable" as *;
 
-@mixin title($text-color){
+@mixin title($text-color) {
     font-size: map-get($font-size, xl);
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 3rem;
     position: relative;
+    color: $text-color;
 
     &::before {
         content: '';
