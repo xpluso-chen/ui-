@@ -1,7 +1,15 @@
 @use "variable" as *;
 
+// 水平置中
 %flex-center{
     display: flex;
     justify-content: center;
+}
+
+// 垂直置中
+%flex-column-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 

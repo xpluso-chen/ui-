@@ -46,11 +46,11 @@ body {
     .text-content-m {
         font-size: map-get($font-size, m);
     }
-    .flex-center{
-        display: flex;
-        justify-content: center;
-    }
-
+    
+//水平置中
+.flex-center{
+    @extend %flex-center;
+}
 
     // 寬度
     section {
@@ -61,7 +61,7 @@ body {
     .box-width {
         width: 80%;
         padding: map-get($interval, m) 0;
-        @extend %flex-center;
+        @extend %flex-column-center;
     }
 
     .article-width {
@@ -212,6 +212,9 @@ body {
     #news-area {
         background-image: url(../images/img3-perple.jpg);
         background-size: cover;
+        #btn-more{
+            border-bottom:#fff 1px solid;
+        }
     }
 
 

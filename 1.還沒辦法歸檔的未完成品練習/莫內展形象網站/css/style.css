@@ -1,8 +1,14 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Zen+Kaku+Gothic+New&display=swap");
-body section, body .box-width {
+body .flex-center, body section {
   display: flex;
   justify-content: center;
+}
+
+body .box-width {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 body {
@@ -175,4 +181,7 @@ body #blue-area {
 body #news-area {
   background-image: url(../images/img3-perple.jpg);
   background-size: cover;
+}
+body #news-area #btn-more {
+  border-bottom: #fff 1px solid;
 }/*# sourceMappingURL=style.css.map */
