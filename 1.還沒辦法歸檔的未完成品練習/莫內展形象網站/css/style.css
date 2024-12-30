@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Zen+Kaku+Gothic+New&display=swap");
-body .flex-center, body section {
+body .flex-center, body section, body .introduce-box {
   display: flex;
   justify-content: center;
 }
@@ -69,8 +69,13 @@ body .text-content-m {
 }
 body section {
   width: 100%;
+  padding: 5rem 0;
 }
 body .box-width {
+  width: 80%;
+  padding: 2.5rem 0;
+}
+body .box-width80 {
   width: 80%;
   padding: 2.5rem 0;
 }
@@ -99,7 +104,12 @@ body #carouselExampleCaptions .banner-view {
   width: 100%;
   height: 100%;
 }
-body .introduce-img img {
+body .introduce-box {
+  width: 80%;
+  gap: 3rem;
+}
+body .introduce-box .introduce-img img {
+  width: 100%;
   border: #111 2px solid;
 }
 body #introduce2 {

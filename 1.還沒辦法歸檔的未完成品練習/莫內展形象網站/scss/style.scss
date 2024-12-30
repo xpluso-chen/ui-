@@ -55,6 +55,7 @@ body {
     section {
         width: 100%;
         @extend %flex-center;
+        padding: 5rem 0;
     }
 
     .box-width {
@@ -62,6 +63,11 @@ body {
         padding: map-get($interval, m) 0;
         @extend %flex-column-center;
     }
+    .box-width80 {
+        width: 80%;
+        padding: map-get($interval, m) 0;
+    }
+   
 
     .article-width {
         width: 40%;
@@ -101,12 +107,21 @@ body {
     }
 
     // 莫內介紹
-    .introduce-img {
-        img {
-            border: #111 2px solid;
-        }
+    .introduce-box{
+        width: 80%;
+        @extend %flex-center;  
+        gap: 3rem;
 
+        .introduce-img {
+        
+            img {
+                width: 100%;
+                border: #111 2px solid;
+            }
+    
+        }
     }
+    
 
     // 抽想派介紹
     #introduce2 {
