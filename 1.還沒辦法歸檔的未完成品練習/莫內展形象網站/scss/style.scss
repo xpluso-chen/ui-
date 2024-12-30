@@ -9,8 +9,6 @@
 
 
 
-
-
 body {
     font-family: 'Inria Serif', serif !important;
     position: relative;
@@ -30,6 +28,7 @@ body {
         z-index: -1;
     }
 
+
     // 字體大小定義
     .title-black {
         @include title(#111);
@@ -46,11 +45,11 @@ body {
     .text-content-m {
         font-size: map-get($font-size, m);
     }
-    
-//水平置中
-.flex-center{
-    @extend %flex-center;
-}
+
+    //水平置中
+    .flex-center {
+        @extend %flex-center;
+    }
 
     // 寬度
     section {
@@ -74,6 +73,10 @@ body {
         padding: map-get($interval, m) 0;
     }
 
+    // hover手指
+    .hover-finger {
+        cursor: pointer;
+    }
 
     // 導覽列
     .navbar {
@@ -212,8 +215,9 @@ body {
     #news-area {
         background-image: url(../images/img3-perple.jpg);
         background-size: cover;
-        #btn-more{
-            border-bottom:#fff 1px solid;
+
+        #btn-more {
+            border-bottom: #fff 1px solid;
         }
     }
 

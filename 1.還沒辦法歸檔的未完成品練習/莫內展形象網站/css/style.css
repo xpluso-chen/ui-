@@ -67,10 +67,6 @@ body .text-content-l {
 body .text-content-m {
   font-size: 1rem;
 }
-body .flex-center {
-  display: flex;
-  justify-content: center;
-}
 body section {
   width: 100%;
 }
@@ -84,6 +80,9 @@ body .article-width {
 }
 body .title-padding {
   padding: 2.5rem 0;
+}
+body .hover-finger {
+  cursor: pointer;
 }
 body .navbar {
   position: fixed;
