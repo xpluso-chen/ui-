@@ -69,7 +69,6 @@ body .text-content-m {
 }
 body section {
   width: 100%;
-  padding: 5rem 0;
 }
 body .box-width {
   width: 80%;
@@ -184,7 +183,6 @@ body #exhibition-area .owl-slider .owl-carousel span {
   top: -5px;
 }
 body #blue-area {
-  height: 100%;
   background-color: #AAD2E9;
 }
 body #news-area {

@@ -55,15 +55,17 @@ body {
     section {
         width: 100%;
         @extend %flex-center;
-        padding: 5rem 0;
+        // padding: 5rem 0;
     }
 
     .box-width {
+        // 垂直置中
         width: 80%;
         padding: map-get($interval, m) 0;
         @extend %flex-column-center;
     }
-    .box-width80 {
+    .box-width80{
+        // 無置中
         width: 80%;
         padding: map-get($interval, m) 0;
     }
@@ -221,7 +223,6 @@ body {
     }
 
     #blue-area {
-        height: 100%;
         background-color: #AAD2E9;
 
     }
