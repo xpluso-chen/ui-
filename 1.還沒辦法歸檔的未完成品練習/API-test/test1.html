@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axios API Example</title>
+</head>
+<body>
+    <h1>隨機人像</h1>
+    <button id="find">按一下</button>
+    <div id="show"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        const apiUrl = 'https://randomuser.me/api/';
+        const show = document.getElementById('show');
+        const find = document.getElementById('find');
+
+        const axiosFunc = () => {
+            axios
+                .get(apiUrl)
+                .then((response) => {
+                    // 取得資料並顯示
+                    console.log(response.data);
+                    let user = response.data.results[0];
+                    let name = `${user.name.first} ${user.name.last}`; // 使用者姓名
+                    let img = user.picture.large; // 使用者照片
+                    let email = user.email; // 使用者信箱
+
+                    // 更新畫面到指定div
+                    show.innerHTML = `
+                        <h3>${name}</h3>
+                        <img src="${img}" alt="User Picture">
+                        <p>Email: ${email}</p>
+                    `;
+                })
+                .catch((error) => console.error(error));
+        };
+
+        // 觸發條件:按find按鈕
+        find.addEventListener('click', () => {
+            axiosFunc();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 3 Axios Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>隨機人像</h1>
+        <button @click="getUserInfo">按一下</button>
+        <div v-if="user">
+            <!-- v-if="user"：當 user 資料存在時才顯示name、img 、email-->
+            <h3>{{ user.name }}</h3>
+            <img :src="user.img" alt="User Picture">
+            <p>Email: {{ user.email }}</p>
+        </div>
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    user: 'null',  // 用來儲存 API 回傳的資料，v-if="user"：當 user 資料存在時才顯示使用者其他資料。
+                };
+            },
+            methods: {
+                getUserInfo() {
+                    axios
+                        .get('https://randomuser.me/api/')
+                        .then((response) => {
+                            // 取得資料並處理
+                            const userData = response.data.results[0];
+                            this.user = {
+                                name: `${userData.name.first} ${userData.name.last}`, // 姓名
+                                img: userData.picture.large, // 圖片
+                                email: userData.email, // 信箱
+                            };
+                        })
+                        .catch((error) => console.error(error));
+                },
+            },
+        });
+
+        app.mount('#app');
+    </script>
+</body>
+</html>
