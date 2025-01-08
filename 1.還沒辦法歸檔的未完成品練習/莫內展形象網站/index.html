@@ -81,9 +81,10 @@
         <img src="./images/img1-woman.jpg" class="" alt="介紹圖">
       </div>
       <!-- 文字區 -->
-      <div id="introduce-content" class="w-50">
+      <div id="introduce-content" class="w-50 scroll-text">
         <span class="title-black">Claude Monet</span>
-        <p class="text-content pt-5">Claude Monet, one of the central figures of Impressionism, left a profound and
+        <p class="text-content pt-5">Claude Monet, one of the central figures of Impressionism, left a
+          profound and
           enduring impact on the art world. As a key advocate of the movement, Monet’s revolutionary exploration of
           light and color reshaped artistic creation. His philosophy not only challenged the conventions of traditional
           academic art but also inspired the evolution of modern art.
@@ -104,8 +105,8 @@
 
   <!-- 抽象派介紹 -->
   <section id="introduce2">
-    <div id="introduce-content2" class="box-width80">
-      <span class="title-white">Impressionism</span>
+    <div id="introduce-content2" class="box-width80 scroll-text">
+      <span class="title-white ">Impressionism</span>
       <p class="text-content-m pt-5">Impressionism is an art movement that emerged in late 19th-century France, renowned
         for its challenge to traditional artistic conventions. The name of the movement derives from Monet’s painting
         Impression, Sunrise, embodying its core philosophy of capturing fleeting light, shadow, and emotional
@@ -125,9 +126,9 @@
 
 
   <!-- 展覽 -->
-  <section id="exhibition-area" class="d-block w-100 exhibition-area">
+  <section id="exhibition-area" class="d-block w-100 exhibition-area scroll-text">
 
-    <div class="h-100 pt-5 pb-5">
+    <div class="h-100 pt-5 pb-5 scroll-text">
       <!-- 至中/標題 -->
       <div id="introduce-content" class="w-100 h-100 pt-5 pb-5 d-flex justify-content-center">
         <span class="title-black">EXHIBITIONS</span>
@@ -155,7 +156,7 @@
     <!--藍底  -->
     <div id="blue-area" class="w-100 h-100 flex-center">
       <div class="box-width">
-        <p class="w-100">In 1872, Monet completed a painting titled Impression, Sunrise, capturing the mesmerizing
+        <p class="w-100 scroll-text">In 1872, Monet completed a painting titled Impression, Sunrise, capturing the mesmerizing
           morning view of the
           harbor in Le Havre, France. With brisk brushstrokes and a unique mastery of light, Monet transformed a
           fleeting sensation into a vivid and dynamic artwork. However, this painting was not widely understood at the
@@ -167,8 +168,8 @@
   </section>
 
   <!-- 最新消息 -->
-  <section id="news-area">
-    <div class="box-width">
+  <section id="news-area" class="scroll-text">
+    <div class="box-width scroll-text">
       <div class="title-padding">
         <a href=""></a><span class="title-white">NEWS</span>
       </div>
@@ -192,7 +193,7 @@
 
   <!-- footer -->
   <section id="footer">
-    <div class="box-width">
+    <div class="box-width scroll-text">
       <p class="w-100">Disclaimer:This website is for practice and non-commercial purposes. Some image materials are
         sourced from royalty-free platforms (such as Unsplash and Getty Museum) and are used in accordance with their
         licensing terms.
@@ -250,23 +251,32 @@
     });
 
     $(function () {
-      // 滾動事件
       $(window).on('scroll', function () {
         const scrollTop = $(this).scrollTop(); // 當前滾動距離
         const windowHeight = $(window).height(); // 視窗高度
-        const introduce2Offset = $('#introduce2').offset().top; // #introduce2 區塊的頂部位置
-        const introduce2Height = $('#introduce2').outerHeight(); // #introduce2 區塊的高度
 
-        // 確認當前滾動是否在區塊範圍內
+        // 視差效果
+        const introduce2Offset = $('#introduce2').offset().top; // 區塊頂部位置
+        const introduce2Height = $('#introduce2').outerHeight(); // 區塊高度
         if (scrollTop + windowHeight > introduce2Offset && scrollTop < introduce2Offset + introduce2Height) {
-          const parallaxSpeed = 0.9; // 視差滾動速度，您可以調整此值
-          const offset = (scrollTop - introduce2Offset) * parallaxSpeed;
-
-          // 更新背景位置以產生視差效果
+          const parallaxSpeed = 0.9; // 視差滾動速度
+          const offset = Math.max(0, (scrollTop - introduce2Offset) * parallaxSpeed);
           $('#introduce2').css('background-position', `center ${offset}px`);
         }
+
+        // 滾動文字效果
+        $(".scroll-text").each(function () {
+          const $text = $(this);
+          const textOffset = $text.offset().top; // 文字區塊頂部位置
+          if (scrollTop + windowHeight > textOffset) {
+            $text.fadeTo(1800, 1);//透明度
+          }
+          // 在scss的.scroll-text {opacity: 0 }初始狀態要先隱藏才有顯現的效果
+
+        });
       });
     });
+
 
   </script>
   <!--  -->

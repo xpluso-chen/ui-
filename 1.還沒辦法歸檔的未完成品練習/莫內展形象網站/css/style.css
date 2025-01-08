@@ -101,6 +101,9 @@ body .title-padding {
 body .finger {
   cursor: pointer;
 }
+body .scroll-text {
+  opacity: 0; /* 初始隱藏 */
+}
 body .navbar {
   position: fixed;
   top: 0;
