@@ -64,12 +64,13 @@ body {
         padding: map-get($interval, m) 0;
         @extend %flex-column-center;
     }
-    .box-width80{
+
+    .box-width80 {
         // 無置中
         width: 80%;
         padding: map-get($interval, m) 0;
     }
-   
+
 
     .article-width {
         width: 40%;
@@ -85,10 +86,12 @@ body {
     .finger {
         cursor: pointer;
     }
+
     .scroll-text {
-        opacity: 0; /* 初始隱藏 */
-      }
-      
+        opacity: 0;
+        /* 初始隱藏 */
+    }
+
 
     // 導覽列
     .navbar {
@@ -96,6 +99,24 @@ body {
         top: 0;
         width: 100%;
         z-index: 999;
+
+        .nav-item {
+            position: relative;
+
+            &:hover {
+                ::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 8px;
+                    left: 5%;
+                    width: 90%;
+                    height: 100%;
+                    @extend %white-border-bottom;
+                }
+
+            }
+        }
+
     }
 
     // 輪播
@@ -113,28 +134,29 @@ body {
     }
 
     // 莫內介紹
-    .introduce-box{
+    .introduce-box {
         width: 80%;
-        @extend %flex-center;  
+        @extend %flex-center;
         gap: 3rem;
         padding: 5rem 0;
 
         .introduce-img {
-        
+
             img {
                 width: 100%;
                 height: auto;
                 min-width: 400px;
                 border: #111 2px solid;
             }
-    
+
         }
-        #introduce-content{
+
+        #introduce-content {
             padding-top: 4px;
             // 因為img有邊線讓文字區看起來比較高
         }
     }
-    
+
 
     // 抽想派介紹
     #introduce2 {
@@ -222,31 +244,31 @@ body {
 
     #blue-area {
         background-color: #AAD2E9;
-
     }
 
     // 最新消息
     #news-area {
         background-image: url(../images/img3-perple.jpg);
         background-size: cover;
+
         // list
-        .news-list{
+        .news-list {
             color: #EEEEEC;
             background-color: rgba(255, 255, 255, 0.2);
             border-radius: 0;
         }
 
         #btn-more {
-            border-bottom: #fff 1px solid;
+            @extend %white-border-bottom;
         }
     }
 
 
-// footer
-#footer{
-    position: relative;
-    background-color: #F6F0E0;
-    @extend %bg-shadow;
-}
+    // footer
+    #footer {
+        position: relative;
+        background-color: #F6F0E0;
+        @extend %bg-shadow;
+    }
 
 }
