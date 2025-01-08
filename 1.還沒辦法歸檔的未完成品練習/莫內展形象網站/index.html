@@ -153,7 +153,7 @@
     </div>
 
     <!--藍底  -->
-    <div id="blue-area" class="w-100 h-100 flex-center">  
+    <div id="blue-area" class="w-100 h-100 flex-center">
       <div class="box-width">
         <p class="w-100">In 1872, Monet completed a painting titled Impression, Sunrise, capturing the mesmerizing
           morning view of the
@@ -193,15 +193,19 @@
   <!-- footer -->
   <section id="footer">
     <div class="box-width">
-      <p class="w-100">Disclaimer:This website is for practice and non-commercial purposes. Some image materials are sourced from royalty-free platforms (such as Unsplash and Getty Museum) and are used in accordance with their licensing terms.  
-        Unauthorized reproduction, distribution, modification, or commercial use of this website's original content is strictly prohibited. For further use of royalty-free images, please refer to their original licensing terms or contact the respective source platforms.</p>
-        
-        <!-- <small>Disclaimer: This website is for practice and non-commercial purposes. Some image materials are sourced from royalty-free platforms (such as Unsplash and Getty Museum) and are used in accordance with their licensing terms.  
+      <p class="w-100">Disclaimer:This website is for practice and non-commercial purposes. Some image materials are
+        sourced from royalty-free platforms (such as Unsplash and Getty Museum) and are used in accordance with their
+        licensing terms.
+        Unauthorized reproduction, distribution, modification, or commercial use of this website's original content is
+        strictly prohibited. For further use of royalty-free images, please refer to their original licensing terms or
+        contact the respective source platforms.</p>
+
+      <!-- <small>Disclaimer: This website is for practice and non-commercial purposes. Some image materials are sourced from royalty-free platforms (such as Unsplash and Getty Museum) and are used in accordance with their licensing terms.  
           Unauthorized reproduction, distribution, modification, or commercial use of this website's original content is strictly prohibited. For further use of royalty-free images, please refer to their original licensing terms or contact the respective source platforms.</small> -->
-        
-          <small>Copyright © 2024 MomentInLight. All Rights Reserved.</small>
-      </div>
-    
+
+      <small>Copyright © 2024 MomentInLight. All Rights Reserved.</small>
+    </div>
+
   </section>
 
 
@@ -244,6 +248,26 @@
         }
       }
     });
+
+    $(function () {
+      // 滾動事件
+      $(window).on('scroll', function () {
+        const scrollTop = $(this).scrollTop(); // 當前滾動距離
+        const windowHeight = $(window).height(); // 視窗高度
+        const introduce2Offset = $('#introduce2').offset().top; // #introduce2 區塊的頂部位置
+        const introduce2Height = $('#introduce2').outerHeight(); // #introduce2 區塊的高度
+
+        // 確認當前滾動是否在區塊範圍內
+        if (scrollTop + windowHeight > introduce2Offset && scrollTop < introduce2Offset + introduce2Height) {
+          const parallaxSpeed = 0.9; // 視差滾動速度，您可以調整此值
+          const offset = (scrollTop - introduce2Offset) * parallaxSpeed;
+
+          // 更新背景位置以產生視差效果
+          $('#introduce2').css('background-position', `center ${offset}px`);
+        }
+      });
+    });
+
   </script>
   <!--  -->
 </body>

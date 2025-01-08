@@ -131,6 +131,7 @@ body #introduce2 {
   height: 100dvh;
   background-image: url(../images/img2-blue.jpg);
   background-size: cover;
+  background-position: center center;
 }
 body #introduce2 #introduce-content2 {
   color: #fff;
