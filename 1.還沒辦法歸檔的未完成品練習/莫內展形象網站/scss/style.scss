@@ -123,9 +123,15 @@ body {
         
             img {
                 width: 100%;
+                height: auto;
+                min-width: 400px;
                 border: #111 2px solid;
             }
     
+        }
+        #introduce-content{
+            padding-top: 4px;
+            // 因為img有邊線讓文字區看起來比較高
         }
     }
     

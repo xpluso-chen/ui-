@@ -126,7 +126,12 @@ body .introduce-box {
 }
 body .introduce-box .introduce-img img {
   width: 100%;
+  height: auto;
+  min-width: 400px;
   border: #111 2px solid;
+}
+body .introduce-box #introduce-content {
+  padding-top: 4px;
 }
 body #introduce2 {
   position: relative;
