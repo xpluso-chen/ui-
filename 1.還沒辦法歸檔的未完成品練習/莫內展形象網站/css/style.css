@@ -115,6 +115,16 @@ body .navbar {
   width: 100%;
   z-index: 999;
 }
+body .navbar .navbar-brand {
+  position: relative;
+}
+body .navbar .navbar-brand #logo {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+}
 body .navbar .nav-item {
   position: relative;
 }
