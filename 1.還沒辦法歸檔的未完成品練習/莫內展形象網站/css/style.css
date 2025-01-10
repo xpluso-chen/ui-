@@ -50,7 +50,7 @@ body .title-black {
   font-size: 2rem;
   padding: 0.5rem 3rem;
   position: relative;
-  color: #111;
+  color: black;
 }
 body .title-black::before {
   content: "";
@@ -59,14 +59,14 @@ body .title-black::before {
   left: 0;
   width: 100%;
   height: 100%;
-  border-top: #111 2px solid;
-  border-bottom: #111 2px solid;
+  border-top: black 2px solid;
+  border-bottom: black 2px solid;
 }
 body .title-white {
   font-size: 2rem;
   padding: 0.5rem 3rem;
   position: relative;
-  color: white;
+  color: #EEEEEC;
 }
 body .title-white::before {
   content: "";
@@ -75,8 +75,8 @@ body .title-white::before {
   left: 0;
   width: 100%;
   height: 100%;
-  border-top: white 2px solid;
-  border-bottom: white 2px solid;
+  border-top: #EEEEEC 2px solid;
+  border-bottom: #EEEEEC 2px solid;
 }
 body .text-content-l {
   font-size: 1.5rem;
@@ -105,9 +105,13 @@ body .title-padding {
 body .finger {
   cursor: pointer;
 }
-body .scroll-text {
+body .hidden {
   opacity: 0;
   /* 初始隱藏 */
+}
+body .shown {
+  opacity: 1;
+  transition: all 0.3s linear;
 }
 body .navbar {
   position: fixed;
@@ -139,7 +143,7 @@ body .navbar .nav-item:hover ::before {
 body #carouselExampleCaptions {
   width: 100%;
   height: 96dvh;
-  border: #111 1px solid;
+  border: black 1px solid;
 }
 body #carouselExampleCaptions .banner-view {
   width: 100%;
@@ -154,7 +158,7 @@ body .introduce-box .introduce-img img {
   width: 100%;
   height: auto;
   min-width: 400px;
-  border: #111 2px solid;
+  border: black 2px solid;
 }
 body .introduce-box #introduce-content {
   padding-top: 4px;
@@ -168,7 +172,7 @@ body #introduce2 {
   background-position: center center;
 }
 body #introduce2 #introduce-content2 {
-  color: #fff;
+  color: #EEEEEC;
   position: absolute;
   bottom: 0;
 }
@@ -187,7 +191,7 @@ body #exhibition-area .owl-slider .owl-carousel .owl-nav button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: #fff;
+  color: #EEEEEC;
   border: none;
   transition: all 0.8s ease-in-out;
   z-index: 10;
@@ -208,11 +212,28 @@ body #exhibition-area .owl-slider .owl-carousel .owl-item {
 body #exhibition-area .owl-slider .owl-carousel .item {
   width: 100%;
   height: 100%;
-  border: #111 2px solid;
+  border: black 2px solid;
+  position: relative;
 }
 body #exhibition-area .owl-slider .owl-carousel .item img {
   height: 100%;
   object-fit: cover;
+}
+body #exhibition-area .owl-slider .owl-carousel .item .exhibition-info {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+body #exhibition-area .owl-slider .owl-carousel .item .exhibition-info p {
+  position: absolute;
+  width: 50%;
+  height: auto;
+  bottom: 0;
+  left: 8%;
+  color: #EEEEEC;
 }
 body #exhibition-area .owl-slider .owl-carousel span {
   font-size: 70px;

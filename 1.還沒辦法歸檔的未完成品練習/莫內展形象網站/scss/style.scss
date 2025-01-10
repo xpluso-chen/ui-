@@ -1,4 +1,4 @@
-// @use "color" as *;
+@use "color" as *;
 // @use "extend" as *;
 // @use "mixin" as *;
 @use "variable" as *;
@@ -12,7 +12,7 @@
 body {
     font-family: 'Inria Serif', serif !important;
     position: relative;
-    background-color: #EEEEEC;
+    background-color: map-get($color, bg-yellow);
 
     &::before {
         content: '';
@@ -31,11 +31,11 @@ body {
 
     // 字體大小定義
     .title-black {
-        @include title(#111);
+        @include title(black);
     }
 
     .title-white {
-        @include title(white);
+        @include title(map-get($color, bg-yellow));
     }
 
     .text-content-l {
@@ -87,9 +87,13 @@ body {
         cursor: pointer;
     }
 
-    .scroll-text {
+    .hidden {
         opacity: 0;
         /* 初始隱藏 */
+    }
+    .shown{
+        opacity: 1;
+        transition: all .3s linear;
     }
 
 
@@ -100,8 +104,9 @@ body {
         width: 100%;
         z-index: 999;
 
-        .navbar-brand{
+        .navbar-brand {
             position: relative;
+
             #logo {
                 position: absolute;
                 top: 0;
@@ -110,7 +115,7 @@ body {
                 height: 40px;
             }
         }
-        
+
 
         .nav-item {
             position: relative;
@@ -135,7 +140,7 @@ body {
     #carouselExampleCaptions {
         width: 100%;
         height: 96dvh;
-        border: #111 1px solid;
+        border: black 1px solid;
 
         .banner-view {
             width: 100%;
@@ -158,7 +163,7 @@ body {
                 width: 100%;
                 height: auto;
                 min-width: 400px;
-                border: #111 2px solid;
+                border: black 2px solid;
             }
 
         }
@@ -180,7 +185,7 @@ body {
         background-position: center center;
 
         #introduce-content2 {
-            color: #fff;
+            color: map-get($color, bg-yellow);
             position: absolute;
             bottom: 0;
         }
@@ -201,14 +206,13 @@ body {
                 /* 圖片區，用內距把按鈕推出去 */
                 padding: 0 60px;
 
-
                 .owl-nav {
                     button {
                         position: absolute;
                         top: 50%;
                         transform: translateY(-50%);
                         // background: rgba(255, 255, 255, 0.38);
-                        color: #fff;
+                        color: map-get($color, bg-yellow);
                         border: none;
                         transition: all 0.8s ease-in-out;
                         z-index: 10;
@@ -236,11 +240,30 @@ body {
                 .item {
                     width: 100%;
                     height: 100%;
-                    border: #111 2px solid;
+                    border: black 2px solid;
+                    position: relative;
 
                     img {
                         height: 100%;
                         object-fit: cover;
+                    }
+
+                    .exhibition-info {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        bottom: 0;
+                        left: 0;
+                        background-color: rgba(0, 0, 0, 0.3);
+
+                        p {
+                            position: absolute;
+                            width: 50%;
+                            height: auto;
+                            bottom: 0;
+                            left: 8%;
+                            color: map-get($color, bg-yellow);
+                        }
                     }
                 }
 
@@ -255,7 +278,7 @@ body {
     }
 
     #blue-area {
-        background-color: #AAD2E9;
+        background-color: map-get($color, bg-blue);
     }
 
     // 最新消息
@@ -265,7 +288,7 @@ body {
 
         // list
         .news-list {
-            color: #EEEEEC;
+            color: map-get($color, bg-yellow);
             background-color: rgba(255, 255, 255, 0.2);
             border-radius: 0;
         }
@@ -279,7 +302,7 @@ body {
     // footer
     #footer {
         position: relative;
-        background-color: #F6F0E0;
+        background-color: map-get($color, bg-deepYellow);
         @extend %bg-shadow;
     }
 

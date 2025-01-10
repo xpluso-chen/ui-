@@ -35,7 +35,7 @@
         aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
+
       <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav me-auto mb-2 mb-sm-0">
           <li class="nav-item">
@@ -84,7 +84,7 @@
         <img src="./images/img1-woman.jpg" class="" alt="介紹圖">
       </div>
       <!-- 文字區 -->
-      <div id="introduce-content" class="scroll-text">
+      <div id="introduce-content" class="scroll-text hidden">
         <span class="title-black">Claude Monet</span>
         <p class="text-content pt-5">Claude Monet, one of the central figures of Impressionism, left a
           profound and
@@ -108,7 +108,7 @@
 
   <!-- 抽象派介紹 -->
   <section id="introduce2">
-    <div id="introduce-content2" class="box-width80 scroll-text">
+    <div id="introduce-content2" class="box-width80 scroll-text hidden">
       <span class="title-white ">Impressionism</span>
       <p class="text-content-m pt-5">Impressionism is an art movement that emerged in late 19th-century France, renowned
         for its challenge to traditional artistic conventions. The name of the movement derives from Monet’s painting
@@ -129,9 +129,9 @@
 
 
   <!-- 展覽 -->
-  <section id="exhibition-area" class="d-block w-100 exhibition-area scroll-text">
+  <section id="exhibition-area" class="d-block w-100 exhibition-area scroll-text hidden">
 
-    <div class="h-100 pt-5 pb-5 scroll-text">
+    <div class="h-100 pt-5 pb-5 scroll-text hidden">
       <!-- 至中/標題 -->
       <div id="introduce-content" class="w-100 h-100 pt-5 pb-5 d-flex justify-content-center">
         <span class="title-black">EXHIBITIONS</span>
@@ -142,15 +142,27 @@
         <div id="carousel" class="owl-carousel">
           <div class="item finger">
             <img src="./images/exhibitio1.jpg" alt="展覽1">
+            <div class="exhibition-info hidden">
+              <p>Radiant Daylight Zone</p>
+            </div>
           </div>
           <div class="item finger">
             <img src="./images/exhibition-2.jpg" alt="展覽2">
+            <div class="exhibition-info hidden">
+              <p>Cloudscape Creations Zone</p>              
+            </div>
           </div>
           <div class="item finger">
             <img src="./images/exhibition-3.jpg" alt="展覽3">
+            <div class="exhibition-info hidden">              
+              <p>Twilight Symphony Zone</p>
+            </div>
           </div>
           <div class="item finger">
             <img src="./images/exhibition-4.jpg" alt="展覽4">
+            <div class="exhibition-info hidden">
+              <p>Portal To Dawn Zone</p>
+            </div>
           </div>
         </div>
       </div>
@@ -159,7 +171,8 @@
     <!--藍底  -->
     <div id="blue-area" class="w-100 h-100 flex-center">
       <div class="box-width">
-        <p class="w-100 scroll-text">In 1872, Monet completed a painting titled Impression, Sunrise, capturing the mesmerizing
+        <p class="w-100 scroll-text hidden">In 1872, Monet completed a painting titled Impression, Sunrise, capturing the
+          mesmerizing
           morning view of the
           harbor in Le Havre, France. With brisk brushstrokes and a unique mastery of light, Monet transformed a
           fleeting sensation into a vivid and dynamic artwork. However, this painting was not widely understood at the
@@ -171,8 +184,8 @@
   </section>
 
   <!-- 最新消息 -->
-  <section id="news-area" class="scroll-text">
-    <div class="box-width scroll-text">
+  <section id="news-area" class="scroll-text hidden">
+    <div class="box-width scroll-text hidden">
       <div class="title-padding">
         <a href=""></a><span class="title-white">NEWS</span>
       </div>
@@ -196,7 +209,7 @@
 
   <!-- footer -->
   <section id="footer">
-    <div class="box-width scroll-text">
+    <div class="box-width scroll-text hidden">
       <p class="w-100">Disclaimer:This website is for practice and non-commercial purposes. Some image materials are
         sourced from royalty-free platforms (such as Unsplash and Getty Museum) and are used in accordance with their
         licensing terms.
@@ -220,12 +233,12 @@
   <!-- 輪播jQuery and OwlCarousel JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  
+
   <!--自定義jQuery們  -->
   <script src="./javascripe/jquery.js"></script>
 
-  
-  
+
+
 </body>
 
 </html>

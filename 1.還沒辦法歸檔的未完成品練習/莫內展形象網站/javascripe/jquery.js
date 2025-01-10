@@ -61,9 +61,17 @@ $(function () {
       // 當頁面回到頂部時，恢復背景顏色
       $('#navbar').css('background-color', '');
   }
-
-
   });
+
+  //展覽輪播介紹字出現和消失
+  $(".exhibition-info").on("mouseenter", function () {
+    $(this).removeClass("hidden").addClass("shown");
+  });
+  
+  $(".exhibition-info").on("mouseleave", function () {
+    $(this).removeClass("shown").addClass("hidden");
+  });
+  
 
 });
 
