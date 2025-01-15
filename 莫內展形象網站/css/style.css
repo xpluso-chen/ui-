@@ -321,4 +321,8 @@ body #news-area .news-list {
 body #footer {
   position: relative;
   background-color: #F6F0E0;
+}
+body #footer p {
+  font-size: 0.5rem;
+  color: #B35C37;
 }/*# sourceMappingURL=style.css.map */
