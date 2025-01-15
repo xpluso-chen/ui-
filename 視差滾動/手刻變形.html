@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 視差滾動示範</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        /* 視差背景 */
+        .parallax {
+            background-image: url('https://img.amiami.com/images/product/main/233/GOODS-04386693.jpg');
+            height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* 滾動後背景區域 */
+        .content {
+            height: 500px;
+            padding: 20px;
+            background-color: rgb(217, 140, 140);
+            font-size: 24px;
+            position: relative;  /* 為圖片提供相對定位 */
+        }
+
+        /* 飛行的圖片 */
+        .thing {
+            position: absolute;
+            bottom: -200px;  /* 起始位置在下方視野外 */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: auto;
+            opacity: 0;
+            animation: flyIn 3s forwards;
+            animation-delay: 1s;
+        }
+
+        /* 滾動觸發動畫 */
+        @keyframes flyIn {
+            0% {
+                bottom: -200px;
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                bottom: 200px;  /* 飛到畫面的正中間 */
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="parallax"></div>
+    <img class="thing" src="./image/和服.png" alt="飛行物體">
+    <div class="content">
+        <p>這是一些內容。</p>
+        
+    </div>
+
+    <div class="parallax"></div>
+
+    <div class="content">
+        <p>這是更多的內容。</p>
+    </div>
+
+    <div class="parallax"></div>
+
+</body>
+</html>
