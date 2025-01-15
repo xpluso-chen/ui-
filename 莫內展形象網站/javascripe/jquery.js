@@ -1,7 +1,9 @@
 
-// 計算 .owl-carousel 內的項目數量
-const itemCount = document.querySelectorAll("#carousel .item").length;
+$(function () {
 
+// 展覽輪播
+const itemCount = document.querySelectorAll("#carousel .item").length;
+// 計算 .owl-carousel 內的項目數量
 jQuery("#carousel").owlCarousel({
   autoplay: false,
   rewind: false, // use rewind if you don't want loop
@@ -16,18 +18,18 @@ jQuery("#carousel").owlCarousel({
   ],
   responsive: {
     0: {
-      items: 3// 根據照片數量顯示
+      items: 1// 根據照片數量顯示
     },
-    600: {
+    768: {
       items: 3 // 根據照片數量顯示
     },
-    1024: {
+    1000: {
       items: 3 // 根據照片數量顯示
     }
   }
 });
 
-$(function () {
+
   $(window).on('scroll', function () {
     const scrollTop = $(this).scrollTop(); // 當前滾動距離
     const windowHeight = $(window).height(); // 視窗高度
