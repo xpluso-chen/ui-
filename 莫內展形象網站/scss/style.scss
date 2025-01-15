@@ -139,22 +139,26 @@ body {
 
     // 輪播
     #carouselExampleCaptions {
-        width: 100%;
-        height: 96dvh;
-        border: black 1px solid;
-
-        .banner-view {
-            width: 100%;
-            height: 100%;
-
+        height: 500px; // 固定高度，根據需求調整
+        overflow: hidden;
+      
+        .carousel-inner {
+          height: 100%;
         }
-
-    }
+      
+        .carousel-item {
+          height: 100%;
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover; // 確保圖片自適應填滿
+          }
+        }
+      }
 
     // 莫內介紹
     .introduce-box {
         width: 80%;
-        @extend %flex-center;
         gap: 3rem;
         padding: 5rem 0;
 
@@ -178,6 +182,10 @@ body {
                 width: 400px;
                 height: auto;
                 border: black 2px solid;
+                
+                @include respond-to(xs) {
+                    width: 200px;
+                }
             }
 
         }

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Zen+Kaku+Gothic+New&display=swap");
-body .flex-center, body section, body .introduce-box {
+body .flex-center, body section {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -143,13 +143,19 @@ body .navbar .nav-item:hover ::before {
   height: 100%;
 }
 body #carouselExampleCaptions {
-  width: 100%;
-  height: 96dvh;
-  border: black 1px solid;
+  height: 500px;
+  overflow: hidden;
 }
-body #carouselExampleCaptions .banner-view {
-  width: 100%;
+body #carouselExampleCaptions .carousel-inner {
   height: 100%;
+}
+body #carouselExampleCaptions .carousel-item {
+  height: 100%;
+}
+body #carouselExampleCaptions .carousel-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 body .introduce-box {
   width: 80%;
@@ -175,6 +181,11 @@ body .introduce-box .introduce-img img {
   width: 400px;
   height: auto;
   border: black 2px solid;
+}
+@media (min-width: 576px) {
+  body .introduce-box .introduce-img img {
+    width: 200px;
+  }
 }
 body .introduce-box #introduce-content {
   padding-top: 4px;
