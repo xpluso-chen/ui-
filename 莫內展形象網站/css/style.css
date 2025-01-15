@@ -6,7 +6,7 @@ body .flex-center, body section {
   justify-content: center;
 }
 
-body .box-width {
+body .box-width, body #footer .footer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -322,7 +322,11 @@ body #footer {
   position: relative;
   background-color: #F6F0E0;
 }
-body #footer p {
+body #footer .footer {
+  padding: 1rem 0 !important;
+  width: 80%;
+}
+body #footer .footer p {
   font-size: 0.5rem;
   color: #B35C37;
 }/*# sourceMappingURL=style.css.map */

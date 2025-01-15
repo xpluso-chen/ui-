@@ -369,10 +369,15 @@ body {
     #footer {
         position: relative;
         background-color: map-get($color, bg-deepYellow);
-        padding: map-get($interva,s) 0;
-        p{
-            font-size: map-get($font-size, s);
-            color: #B35C37;
+        
+        .footer{
+            @extend %flex-column-center;
+            padding: 1rem 0 !important;
+            width: 80%;
+            p{
+                font-size: map-get($font-size, s);
+                color: #B35C37;
+            }
         }
         
         @extend %bg-shadow;
