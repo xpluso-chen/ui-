@@ -34,9 +34,6 @@ body {
   position: relative;
   background-color: #EEEEEC;
 }
-body * {
-  outline: 1px solid red;
-}
 body::before {
   content: "";
   position: absolute;
