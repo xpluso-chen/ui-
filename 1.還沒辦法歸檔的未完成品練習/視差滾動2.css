@@ -1,0 +1,49 @@
+body{background: #808080;}
+
+.bubble{border-radius: 50%; margin: 10%; opacity: 0.5;}
+
+.bubble1{background: #FFD6D1;}
+.bubble2{background: #D5EDFF;}
+.bubble3{background: #F2D1FF;}
+.bubble4{background: #D6FFD7;}
+.bubble5{background: #FFF3D3;}
+
+.bubbleSize1{height: 215px; width: 215px;}
+.bubbleSize2{height: 70px; width: 70px;}
+.bubbleSize3{height: 130px; width: 130px;}
+
+.bubblePosition1{margin-left: 6%;}
+.bubblePosition2{margin-left: 25%;}
+.bubblePosition3{margin: 40%;}
+.bubblePosition4{margin-left: 78%;}
+
+.parallax {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.parallaxLayer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* translateZ()用來設定不同的深度
+其中0表示在基礎層，-1px和-2px表示更深的層次。
+深度越深，滾動時移動的速度越慢。
+scale()則用來放大視差層，這樣當它在更遠的深度時，還能佔滿整個視覺區域，保持視覺連貫性。 */
+/* 視差層會放大，模擬了遠景或背景元素更大、更遠的效果。這樣即使它們移動得較慢 */
+.parallaxLayerBase {
+  transform: translateZ(0);
+}
+.parallaxLayerBack {
+  transform: translateZ(-1px) scale(5) translateX(0px); /* 初始狀態 translateX(0px) */
+  transition: transform 0.1s linear; /* 添加過渡效果 */
+}
+
+.parallaxLayerDeep {
+  transform: translateZ(-2px) scale(3);
+}

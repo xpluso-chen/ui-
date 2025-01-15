@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>視差滾動</title>
+<link rel="stylesheet" href="./視差滾動2.css">
+</head>
+<body>
+    <div class="parallax">
+        <div class="parallaxLayer parallaxLayerDeep">
+          <div class="bubble bubble1 bubbleSize1 bubblePosition1"></div>
+          </div>
+        <div class="parallaxLayer parallaxLayerBack">
+          <div class="bubble bubble3 bubbleSize3 bubblePosition3"></div>
+          </div>
+        <div class="parallaxLayer parallaxLayerBase">
+          <div class="bubble bubble5 bubbleSize2 bubblePosition2"></div>
+          </div>
+      </div>
+
+      <script>
+        // 當頁面滾動時執行這個函數
+        window.addEventListener('scroll', function() {
+          // 取得滾動距離
+          let scrollPosition = window.scrollY;
+      
+          // 計算移動的距離，假設滾動 1000px 時，向左移動 100px
+          let translateXValue = (scrollPosition / 2);  // 100px 的目標，根據滾動距離計算
+      
+          // 限制最大值為100px
+          if (translateXValue > 100) {
+            translateXValue = 100;
+          }
+      
+          // 更新 .parallaxLayerBack 的 transform 屬性，增加 translateX 效果
+          document.querySelector('.parallaxLayerBack').style.transform = 
+            `translateZ(-1px) scale(5) translateX(-${translateXValue}px)`;
+        });
+      </script>
+      
+</body>
+</html>
