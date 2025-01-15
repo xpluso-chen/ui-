@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Zen+Kaku+Gothic+New&display=swap");
 body .flex-center, body section, body .introduce-box {
   display: flex;
+  flex-direction: row;
   justify-content: center;
 }
 
@@ -86,6 +87,7 @@ body .text-content-m {
 }
 body section {
   width: 100%;
+  height: auto;
 }
 body .box-width {
   width: 80%;
@@ -154,14 +156,42 @@ body .introduce-box {
   gap: 3rem;
   padding: 5rem 0;
 }
+@media (min-width: 576px) {
+  body .introduce-box {
+    flex-direction: column;
+    align-items: center;
+    color: rgb(0, 26, 255);
+  }
+}
+@media (min-width: 768px) {
+  body .introduce-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: green;
+  }
+}
 body .introduce-box .introduce-img img {
-  width: 100%;
+  width: 400px;
   height: auto;
-  min-width: 400px;
   border: black 2px solid;
 }
 body .introduce-box #introduce-content {
   padding-top: 4px;
+}
+@media (min-width: 576px) {
+  body .introduce-box #introduce-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (min-width: 768px) {
+  body .introduce-box #introduce-content {
+    display: block;
+    flex-direction: unset;
+    align-items: unset;
+  }
 }
 body #introduce2 {
   position: relative;

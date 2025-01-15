@@ -1,9 +1,8 @@
 @use "color" as *;
-// @use "extend" as *;
-// @use "mixin" as *;
 @use "variable" as *;
 @use "extend" as *;
 @use "mixin" as *;
+@use "breakpoint" as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Zen+Kaku+Gothic+New&display=swap');
 
@@ -54,6 +53,7 @@ body {
     // 寬度
     section {
         width: 100%;
+        height: auto;
         @extend %flex-center;
         // padding: 5rem 0;
     }
@@ -91,7 +91,8 @@ body {
         opacity: 0;
         /* 初始隱藏 */
     }
-    .shown{
+
+    .shown {
         opacity: 1;
         transition: all .3s linear;
     }
@@ -157,12 +158,25 @@ body {
         gap: 3rem;
         padding: 5rem 0;
 
+        @include respond-to(xs) {
+            flex-direction: column;
+            align-items: center;
+            color: rgb(0, 26, 255);
+        }
+
+        // sm: 寬度大於等於 768px
+        @include respond-to(sm) {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            color: green;
+        }
+
         .introduce-img {
 
             img {
-                width: 100%;
+                width: 400px;
                 height: auto;
-                min-width: 400px;
                 border: black 2px solid;
             }
 
@@ -171,6 +185,19 @@ body {
         #introduce-content {
             padding-top: 4px;
             // 因為img有邊線讓文字區看起來比較高
+
+            @include respond-to(xs) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            @include respond-to(sm) {
+                display: block; // 或者使用你想要的其他布局方式
+                flex-direction: unset;
+                align-items: unset;
+            }
+
         }
     }
 
