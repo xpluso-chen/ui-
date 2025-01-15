@@ -9,7 +9,12 @@
 
 
 body {
-    font-family: 'Inria Serif', serif !important;
+    * {
+        outline: 1px solid red;
+    }
+
+    font-family: 'Inria Serif',
+    serif !important;
     position: relative;
     background-color: map-get($color, bg-yellow);
 
@@ -56,6 +61,11 @@ body {
         height: auto;
         @extend %flex-center;
         // padding: 5rem 0;
+    }
+    p{
+        // 段落文字的每一行兩端對齊
+        text-align: justify;
+        line-height: 1.6; 
     }
 
     .box-width {
@@ -141,39 +151,40 @@ body {
     #carouselExampleCaptions {
         height: 500px; // 固定高度，根據需求調整
         overflow: hidden;
-      
+
         .carousel-inner {
-          height: 100%;
-        }
-      
-        .carousel-item {
-          height: 100%;
-          img {
             height: 100%;
-            width: 100%;
-            object-fit: cover; // 確保圖片自適應填滿
-          }
         }
-      }
+
+        .carousel-item {
+            height: 100%;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover; // 確保圖片自適應填滿
+            }
+        }
+    }
 
     // 莫內介紹
     .introduce-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
         width: 80%;
         gap: 3rem;
         padding: 5rem 0;
 
-        @include respond-to(xs) {
-            flex-direction: column;
-            align-items: center;
-            color: rgb(0, 26, 255);
+        @include respond-to(md) {
+            gap: 2rem;
         }
 
-        // sm: 寬度大於等於 768px
         @include respond-to(sm) {
             display: flex;
-            flex-direction: row;
-            justify-content: center;
-            color: green;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
         }
 
         .introduce-img {
@@ -182,9 +193,9 @@ body {
                 width: 400px;
                 height: auto;
                 border: black 2px solid;
-                
-                @include respond-to(xs) {
-                    width: 200px;
+
+                @include respond-to(md) {
+                    width: 240px;
                 }
             }
 
@@ -194,16 +205,18 @@ body {
             padding-top: 4px;
             // 因為img有邊線讓文字區看起來比較高
 
-            @include respond-to(xs) {
+            @include respond-to(sm) {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
             }
 
-            @include respond-to(sm) {
-                display: block; // 或者使用你想要的其他布局方式
-                flex-direction: unset;
-                align-items: unset;
+            p {
+                padding-top: 3rem;
+
+                @include respond-to(md) {
+                    padding-top: 2rem;
+                }
             }
 
         }
@@ -219,10 +232,27 @@ body {
         background-size: cover;
         background-position: center center;
 
+        @include respond-to(xs) {
+            height: 70dvh;
+        }
+        @include respond-to(xxs){
+            height: 80dvh;
+        }
+
         #introduce-content2 {
             color: map-get($color, bg-yellow);
             position: absolute;
             bottom: 0;
+
+            @include respond-to(xs) {
+                top: 1rem;
+                // text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+            }
+
         }
     }
 
@@ -236,7 +266,8 @@ body {
         .owl-slider {
             /* 整個輪播 */
             padding: 2rem;
-
+            width: 100%;
+    
             .owl-carousel {
                 /* 圖片區，用內距把按鈕推出去 */
                 padding: 0 60px;

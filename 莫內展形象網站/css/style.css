@@ -34,6 +34,9 @@ body {
   position: relative;
   background-color: #EEEEEC;
 }
+body * {
+  outline: 1px solid red;
+}
 body::before {
   content: "";
   position: absolute;
@@ -88,6 +91,10 @@ body .text-content-m {
 body section {
   width: 100%;
   height: auto;
+}
+body p {
+  text-align: justify;
+  line-height: 1.6;
 }
 body .box-width {
   width: 80%;
@@ -158,23 +165,24 @@ body #carouselExampleCaptions .carousel-item img {
   object-fit: cover;
 }
 body .introduce-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   width: 80%;
   gap: 3rem;
   padding: 5rem 0;
 }
-@media (min-width: 576px) {
+@media (max-width: 992px) {
   body .introduce-box {
-    flex-direction: column;
-    align-items: center;
-    color: rgb(0, 26, 255);
+    gap: 2rem;
   }
 }
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   body .introduce-box {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    color: green;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
   }
 }
 body .introduce-box .introduce-img img {
@@ -182,26 +190,27 @@ body .introduce-box .introduce-img img {
   height: auto;
   border: black 2px solid;
 }
-@media (min-width: 576px) {
+@media (max-width: 992px) {
   body .introduce-box .introduce-img img {
-    width: 200px;
+    width: 240px;
   }
 }
 body .introduce-box #introduce-content {
   padding-top: 4px;
 }
-@media (min-width: 576px) {
+@media (max-width: 768px) {
   body .introduce-box #introduce-content {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 }
-@media (min-width: 768px) {
-  body .introduce-box #introduce-content {
-    display: block;
-    flex-direction: unset;
-    align-items: unset;
+body .introduce-box #introduce-content p {
+  padding-top: 3rem;
+}
+@media (max-width: 992px) {
+  body .introduce-box #introduce-content p {
+    padding-top: 2rem;
   }
 }
 body #introduce2 {
@@ -212,10 +221,28 @@ body #introduce2 {
   background-size: cover;
   background-position: center center;
 }
+@media (max-width: 576px) {
+  body #introduce2 {
+    height: 70dvh;
+  }
+}
+@media (max-width: 480px) {
+  body #introduce2 {
+    height: 80dvh;
+  }
+}
 body #introduce2 #introduce-content2 {
   color: #EEEEEC;
   position: absolute;
   bottom: 0;
+}
+@media (max-width: 576px) {
+  body #introduce2 #introduce-content2 {
+    top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 body #exhibition-area {
   position: relative;
@@ -223,6 +250,7 @@ body #exhibition-area {
 body #exhibition-area .owl-slider {
   /* 整個輪播 */
   padding: 2rem;
+  width: 100%;
 }
 body #exhibition-area .owl-slider .owl-carousel {
   /* 圖片區，用內距把按鈕推出去 */
