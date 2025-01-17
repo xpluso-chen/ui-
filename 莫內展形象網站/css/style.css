@@ -323,7 +323,7 @@ body #news-area {
   background-size: cover;
 }
 body #news-area .list-group {
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem;
 }
 body #news-area .list-group .news-list {
   color: #EEEEEC;
