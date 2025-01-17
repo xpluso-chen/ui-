@@ -14,7 +14,7 @@
     align-items: center;
 }
 
-// 背景影子
+// 背景影子圖
 %bg-shadow{
     &::before {
         content: "";
@@ -35,3 +35,16 @@
 %white-border-bottom{
     border-bottom: #fff 1px solid;
 }
+
+// 只顯示單行
+%only-one-row{
+    overflow:hidden;/* 多出來時則省略 */
+    text-overflow:ellipsis;
+    white-space: nowrap;/* 不換行 */
+}
+
+// hover動畫效果
+%hover-anime{
+    transition: all .3s linear;
+}
+

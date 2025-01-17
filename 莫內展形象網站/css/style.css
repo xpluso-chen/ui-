@@ -29,6 +29,16 @@ body .navbar .nav-item:hover ::before, body #news-area #btn-more {
   border-bottom: #fff 1px solid;
 }
 
+body #news-area .list-group .news-list p {
+  overflow: hidden; /* 多出來時則省略 */
+  text-overflow: ellipsis;
+  white-space: nowrap; /* 不換行 */
+}
+
+body .shown, body #news-area .list-group .news-list:hover {
+  transition: all 0.3s linear;
+}
+
 body {
   font-family: "Inria Serif", serif !important;
   position: relative;
@@ -117,7 +127,6 @@ body .hidden {
 }
 body .shown {
   opacity: 1;
-  transition: all 0.3s linear;
 }
 body .navbar {
   position: fixed;
@@ -313,10 +322,16 @@ body #news-area {
   background-image: url(../images/img3-perple.jpg);
   background-size: cover;
 }
-body #news-area .news-list {
+body #news-area .list-group {
+  padding-bottom: 1rem;
+}
+body #news-area .list-group .news-list {
   color: #EEEEEC;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 0;
+}
+body #news-area .list-group .news-list:hover {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 body #footer {
   position: relative;
