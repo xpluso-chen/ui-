@@ -141,7 +141,11 @@ body {
                     width: 90%;
                     height: 100%;
                     @extend %white-border-bottom;
+                    @include respond-to(xs){
+                        left: 0%; 
+                    }
                 }
+                
 
             }
         }
@@ -234,11 +238,18 @@ body {
         background-position: center center;
 
         @include respond-to(xs) {
-            height: 70dvh;
+            // 576
+            height: 120dvh;
         }
 
         @include respond-to(xxs) {
-            height: 80dvh;
+            //391
+            height: 130dvh;
+        }
+
+        @include respond-to(xxxs) {
+            //376
+            height: 170dvh;
         }
 
         #introduce-content2 {
@@ -322,15 +333,27 @@ body {
                         height: 100%;
                         bottom: 0;
                         left: 0;
+                        text-shadow: 0 0 4px #3c3c3c;
                         background-color: map-get($color, bg-hover);
+
+                        @include respond-to(md) {
+                            // 當平板模式時顯示介紹
+                            opacity: 1;
+                            background-color: rgba(0, 0, 0, 0);
+                        }
 
                         p {
                             position: absolute;
-                            width: 50%;
+                            width: 100%;
                             height: auto;
                             bottom: 0;
                             left: 8%;
                             color: map-get($color, bg-yellow);
+
+                            @include respond-to(sm) {
+                                // 當是手機大小的時候讓字疊成3行
+                                width: 5%;
+                            }
                         }
                     }
                 }
@@ -355,22 +378,24 @@ body {
         background-size: cover;
 
         // list
-        .list-group{
+        .list-group {
             padding-bottom: map-get($interval, s);
+
             .news-list {
                 color: map-get($color, bg-yellow);
-                background-color: map-get($color, list-white );
+                background-color: map-get($color, list-white);
                 border-radius: 0;
-    
+
                 &:hover {
                     background-color: map-get($color, bg-hover);
                     @extend %hover-anime;
-                }    
+                }
+
                 p {
                     @extend %only-one-row;
                 }
-        }
-        
+            }
+
 
         }
 

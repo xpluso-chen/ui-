@@ -155,6 +155,11 @@ body .navbar .nav-item:hover ::before {
   width: 90%;
   height: 100%;
 }
+@media (max-width: 576px) {
+  body .navbar .nav-item:hover ::before {
+    left: 0%;
+  }
+}
 body #carouselExampleCaptions {
   height: 500px;
   overflow: hidden;
@@ -229,12 +234,17 @@ body #introduce2 {
 }
 @media (max-width: 576px) {
   body #introduce2 {
-    height: 70dvh;
+    height: 120dvh;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 391px) {
   body #introduce2 {
-    height: 80dvh;
+    height: 130dvh;
+  }
+}
+@media (max-width: 376px) {
+  body #introduce2 {
+    height: 170dvh;
   }
 }
 body #introduce2 #introduce-content2 {
@@ -300,15 +310,27 @@ body #exhibition-area .owl-slider .owl-carousel .item .exhibition-info {
   height: 100%;
   bottom: 0;
   left: 0;
+  text-shadow: 0 0 4px #3c3c3c;
   background-color: rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 992px) {
+  body #exhibition-area .owl-slider .owl-carousel .item .exhibition-info {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0);
+  }
 }
 body #exhibition-area .owl-slider .owl-carousel .item .exhibition-info p {
   position: absolute;
-  width: 50%;
+  width: 100%;
   height: auto;
   bottom: 0;
   left: 8%;
   color: #EEEEEC;
+}
+@media (max-width: 768px) {
+  body #exhibition-area .owl-slider .owl-carousel .item .exhibition-info p {
+    width: 5%;
+  }
 }
 body #exhibition-area .owl-slider .owl-carousel span {
   font-size: 70px;
