@@ -74,6 +74,9 @@ body {
         width: 80%;
         padding: map-get($interval, m) 0;
         @extend %flex-column-center;
+        @include respond-to(xs){
+            padding: map-get($interval, s) 0;
+        }
     }
 
     .box-width80 {
@@ -110,12 +113,15 @@ body {
 
 
     // 導覽列
-    .navbar {
+    #navbar {
         position: fixed;
         top: 0;
         width: 100%;
         z-index: 999;
-
+        @include respond-to(xs){
+            // 手機版
+            background-color: map-get($color, nav-deepblue );
+        }
         .navbar-brand {
             position: relative;
 
@@ -142,6 +148,7 @@ body {
                     height: 100%;
                     @extend %white-border-bottom;
                     @include respond-to(xs){
+                        // 手機版
                         left: 0%; 
                     }
                 }

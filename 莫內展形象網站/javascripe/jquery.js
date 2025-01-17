@@ -55,9 +55,9 @@ $(function () {
     // navbar
     // 判斷滾動高度是否超過某個數值
     if (scrollTop > 700) {
-      // 當頁面往下滾動，將 #navbar 背景顏色改為 #111
+      // 當頁面往下滾動，將 #navbar 背景顏色改深色
       // console.log(scrollTop);
-      $('#navbar').css('background-color', 'rgba(83, 124, 163, 0.5)');
+      $('#navbar').css('background-color', 'map-get($color, nav-deepblue)');
     } else {
       // 當頁面回到頂部時，恢復背景顏色
       $('#navbar').css('background-color', '');

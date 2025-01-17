@@ -25,7 +25,7 @@ body #exhibition-area::before, body #footer::before {
   opacity: 0.3;
 }
 
-body .navbar .nav-item:hover ::before, body #news-area #btn-more {
+body #navbar .nav-item:hover ::before, body #news-area #btn-more {
   border-bottom: #fff 1px solid;
 }
 
@@ -107,6 +107,11 @@ body .box-width {
   width: 80%;
   padding: 2.5rem 0;
 }
+@media (max-width: 576px) {
+  body .box-width {
+    padding: 1.5rem 0;
+  }
+}
 body .box-width80 {
   width: 80%;
   padding: 2.5rem 0;
@@ -128,26 +133,31 @@ body .hidden {
 body .shown {
   opacity: 1;
 }
-body .navbar {
+body #navbar {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 999;
 }
-body .navbar .navbar-brand {
+@media (max-width: 576px) {
+  body #navbar {
+    background-color: rgba(83, 124, 163, 0.5);
+  }
+}
+body #navbar .navbar-brand {
   position: relative;
 }
-body .navbar .navbar-brand #logo {
+body #navbar .navbar-brand #logo {
   position: absolute;
   top: 0;
   left: 10px;
   width: 40px;
   height: 40px;
 }
-body .navbar .nav-item {
+body #navbar .nav-item {
   position: relative;
 }
-body .navbar .nav-item:hover ::before {
+body #navbar .nav-item:hover ::before {
   content: "";
   position: absolute;
   bottom: 8px;
@@ -156,7 +166,7 @@ body .navbar .nav-item:hover ::before {
   height: 100%;
 }
 @media (max-width: 576px) {
-  body .navbar .nav-item:hover ::before {
+  body #navbar .nav-item:hover ::before {
     left: 0%;
   }
 }
