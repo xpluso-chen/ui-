@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Weather Forecast</h1>
+    <div id="weather-data"></div>
+    <script>
+
+        // const url = `https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWA-F916FE87-F3F9-4ED1-AF48-2DDF2159AF6F&format=JSON`;
+        const url = './response_1737454650689.json';
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const weatherDataDiv = document.getElementById('weather-data');
+
+                // 提取需要的内容并显示在页面上
+                const { datasetDescription, location } = data.records;
+
+                let output = `<h2>${datasetDescription}</h2>`;
+
+                location.forEach(loc => {
+                    output += `<h3>Location: ${loc.locationName}</h3>`;
+                    loc.weatherElement.forEach(element => {
+                        output += `<h4>${element.elementName}</h4>`;
+                        element.time.forEach(period => {
+                            output += `<p>Time: ${period.startTime} to ${period.endTime}</p>`;
+                            output += `<p>Condition: ${period.parameter.parameterName}</p>`;
+                            if (period.parameter.parameterUnit) {
+                                output += `<p>Unit: ${period.parameter.parameterUnit}</p>`;
+                            }
+                        });
+                    });
+                });
+
+                // 将生成的内容插入页面中
+                weatherDataDiv.innerHTML = output;
+            })
+            .catch(error => console.error('Error:', error));
+
+
+    </script>
+</body>
+
+</html>
