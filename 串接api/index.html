@@ -21,11 +21,13 @@
             .then(data => {
                 const weatherDataDiv = document.getElementById('weather-data');
 
-                // 提取需要的内容并显示在页面上
+                // 解構:提取需要的層
                 const { datasetDescription, location } = data.records;
 
                 let output = `<h2>${datasetDescription}</h2>`;
 
+                // 要某個層裡面的內容需要用forEach
+                // loc、element、period是自己設定的變數，可以想成去跑腿各家店買同個東西的小僕人
                 location.forEach(loc => {
                     output += `<h3>Location: ${loc.locationName}</h3>`;
                     loc.weatherElement.forEach(element => {
