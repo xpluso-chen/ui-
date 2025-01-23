@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="time"></div>
+    <div id="time2"></div>
+    <div id="clock"></div>
+    <script>
+        let time = document.getElementById('time');
+        // 抓現在時間
+        const now = new Date();
+        
+        // 提取個別數值
+        const year = now.getFullYear();
+        const month = now.getMonth() + 1; // 提取月份（注意：月份从 0 开始，需要加 1）
+        const day = now.getDate(); // 提取日期
+        time.textContent = year+'/'+month+'/'+day;
+
+        // 提取指定數值並設成字串
+        const formattedTime = now.toLocaleString('zh-TW', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+        });
+        console.log(formattedTime); // 例如: 2025/01/22 20:45:30
+        time2.textContent = formattedTime;
+
+        // 即時更新時間setInterval
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('zh-TW', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+            });
+            document.getElementById('clock').textContent = timeString;
+        }
+        setInterval(updateTime, 1000); // 每秒更新一次
+
+    </script>
+
+</body>
+
+</html>
