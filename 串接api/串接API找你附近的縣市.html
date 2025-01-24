@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="CountyName">正在尋找最近的測站...</p>
+    <img src="./json/position.json" alt="">
+    <script>
+
+        const url = "./json/position.json";
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                //抓html
+                // 抓取 HTML 元素
+                const weatherLocation = document.getElementById('CountyName');
+
+                // 初始化輸出內容
+                let output = '';
+
+                // 遍歷 JSON 資料並構建輸出內容
+                data.forEach(item => {
+                    output += `地區: ${item.name}<br>`;
+                    output += `緯度: ${item.location.lat}<br>`;
+                    output += `經度: ${item.location.lng}<br><br>`;
+                });
+
+                // 將輸出內容更新到 HTML
+                weatherLocation.innerHTML = output;
+            })
+            .catch(error => console.error('Error:', error));
+
+
+    </script>
+</body>
+
+</html>
