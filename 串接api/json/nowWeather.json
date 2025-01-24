@@ -1,0 +1,135 @@
+{
+  "success": "true",
+  "result": {
+    "resource_id": "O-A0003-001",
+    "fields": [
+      {
+        "id": "StationName",
+        "type": "String"
+      },
+      {
+        "id": "StationId",
+        "type": "String"
+      },
+      {
+        "id": "CoordinateName",
+        "type": "String"
+      },
+      {
+        "id": "CoordinateFormat",
+        "type": "String"
+      },
+      {
+        "id": "StationAltitude",
+        "type": "String"
+      },
+      {
+        "id": "IntScaleValue",
+        "type": "Float"
+      },
+      {
+        "id": "StationAltitude",
+        "type": "Float"
+      },
+      {
+        "id": "CountyName",
+        "type": "String"
+      },
+      {
+        "id": "TownName",
+        "type": "String"
+      },
+      {
+        "id": "CountyCode",
+        "type": "String"
+      },
+      {
+        "id": "TownCode",
+        "type": "String"
+      },
+      {
+        "id": "Weather",
+        "type": "String"
+      },
+      {
+        "id": "VisibilityDescription",
+        "type": "String"
+      },
+      {
+        "id": "SunshineDuration",
+        "type": "Float"
+      },
+      {
+        "id": "Precipitation",
+        "type": "Float"
+      },
+      {
+        "id": "WindDirection",
+        "type": "Float"
+      },
+      {
+        "id": "WindSpeed",
+        "type": "Float"
+      },
+      {
+        "id": "AirTemperature",
+        "type": "Float"
+      },
+      {
+        "id": "RelativeHumidity",
+        "type": "Integer"
+      },
+      {
+        "id": "AirPressure",
+        "type": "Float"
+      },
+      {
+        "id": "UVIndex",
+        "type": "Float"
+      },
+      {
+        "id": "PeakGustSpeed",
+        "type": "Float"
+      },
+      {
+        "id": "DateTime",
+        "type": "DateTime"
+      }
+    ]
+  },
+  "records": {
+    "Station": [
+      {
+        "StationName": "基隆",
+        "StationId": "466940",
+        "ObsTime": {
+          "DateTime": "2025-01-23T15:10:00+08:00"
+        },
+        "GeoInfo": {
+          "Coordinates": [
+            {
+              "CoordinateName": "TWD67",
+              "CoordinateFormat": "decimal degrees",
+              "StationLatitude": 25.13513,
+              "StationLongitude": 121.73226
+            },
+            {
+              "CoordinateName": "WGS84",
+              "CoordinateFormat": "decimal degrees",
+              "StationLatitude": 25.133314,
+              "StationLongitude": 121.74048
+            }
+          ],
+          "StationAltitude": "26.7",
+          "CountyName": "基隆市",
+          "TownName": "仁愛區",
+          "CountyCode": "10017",
+          "TownCode": "10017040"
+        },
+        "WeatherElement": {
+          "AirTemperature": 17.3
+        }
+      }
+    ]
+  }
+}
