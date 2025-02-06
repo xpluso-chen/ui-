@@ -1,0 +1,146 @@
+<!DOCTYPE html> 
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最近測站天氣</title>
+</head>
+
+<body>
+    <h1>最近測站天氣</h1>
+    <div id="now">
+        <p id="AirTemperature"></p>
+        <p id="CountyName"></p>
+    </div>
+
+    <script>
+        // 計算經緯度之間的距離 (Haversine formula)
+        const calculateDistance = (lat1, lon1, lat2, lon2) => {
+            const toRad = (value) => (value * Math.PI) / 180;
+            const R = 6371; // 地球半徑，單位為公里
+            const dLat = toRad(lat2 - lat1);
+            const dLon = toRad(lon2 - lon1);
+            const a =
+                Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(toRad(lat1)) *
+                Math.cos(toRad(lat2)) *
+                Math.sin(dLon / 2) *
+                Math.sin(dLon / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            return R * c; // 回傳距離（公里）
+        };
+
+        // 找到最近的測站
+        const findClosestStation = async (userLat, userLon) => {
+            const url = `https://opendata.cwa.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWA-F916FE87-F3F9-4ED1-AF48-2DDF2159AF6F&format=JSON`;
+
+            try {
+                const response = await fetch(url);  // 使用 fetch 請求 API 資料
+                const data = await response.json(); // 解析 JSON 回應
+
+                const stations = data.records.Station; // 從返回的資料中取得測站列表
+                let closestStation = null;
+                let minDistance = Infinity;
+
+                // 遍歷測站資料並計算每個測站與使用者位置的距離
+                stations.forEach((station) => {
+                    const stationLat = station.GeoInfo.Coordinates[1].StationLatitude; // 取得測站的緯度
+                    const stationLon = station.GeoInfo.Coordinates[1].StationLongitude; // 取得測站的經度
+
+                    const distance = calculateDistance(userLat, userLon, stationLat, stationLon); // 計算距離
+
+                    // 若當前測站距離更近，則更新最近的測站資料
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        closestStation = {
+                            name: `${station.GeoInfo.CountyName} ,${station.GeoInfo.TownName}`, // 縣市鄉鎮名稱
+                            temperature: Math.round(station.WeatherElement.AirTemperature), // 四捨五入的溫度
+                            distance: minDistance.toFixed(2), // 格式化為 2 位小數的距離
+                            obsTime: station.ObsTime.DateTime
+                        };
+                    }
+                });
+
+                return closestStation; // 回傳最近的測站資料
+            } catch (error) {
+                console.error("Error fetching weather data:", error); // 錯誤處理
+            }
+        };
+
+        // 找到最近的縣市
+        const findClosestPosition = async (userLat, userLon) => {
+            const url = "./json/position.json"; // 確保此路徑與你的檔案結構一致
+            try {
+                const response = await fetch(url); // 使用 fetch 請求 position.json 資料
+                const data = await response.json(); // 解析 JSON 回應
+
+                const stations = data; // 資料是陣列，直接遍歷即可
+                let closestPosition = null;
+                let minDistance = Infinity;
+
+                // 遍歷縣市資料並計算每個測站與使用者位置的距離
+                stations.forEach((station) => {
+                    const stationLat = station.location.lat; // 縣市緯度
+                    const stationLon = station.location.lng; // 縣市經度
+
+                    const distance = calculateDistance(userLat, userLon, stationLat, stationLon); // 計算距離
+
+                    // 如果此縣市更接近，更新最近的縣市
+                    if (distance < minDistance) {
+                        const [city, district] = station.name.split("市"); // 將 `name` 的格式調整為 "臺北市,大同區"
+                        minDistance = distance;
+                        closestPosition = {
+                            name: `${city}市,${district}`, // 重新格式化的名稱
+                            distance: minDistance.toFixed(2) // 格式化為小數點後兩位的距離
+                        };
+                    }
+                });
+
+                return closestPosition; // 回傳最近的縣市
+            } catch (error) {
+                console.error("Error fetching position data:", error); // 錯誤處理
+            }
+        };
+
+        // 當頁面載入時觸發的行為
+        window.onload = () => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const userLat = position.coords.latitude; // 使用者緯度
+                        const userLon = position.coords.longitude; // 使用者經度
+
+                        // 找到最近測站並更新畫面
+                        findClosestStation(userLat, userLon).then((closestStation) => {
+                            if (closestStation) {
+                                console.log(`最近的溫度測站：${closestStation.name},距離：${closestStation.distance} 公里,最新時間:${closestStation.obsTime}`);
+                                document.getElementById("AirTemperature").innerText = `氣溫：${closestStation.temperature}°C`;
+                            } else {
+                                document.getElementById("AirTemperature").textContent = "無法找到最近的測站資料。";
+                            }
+                        });
+                        // 找最近的位置和對應的縣市並更新畫面
+                        findClosestPosition(userLat, userLon).then((closestPosition) => {
+                            if (closestPosition) {
+                                console.log(`你的位置：${closestPosition.name}，距離：${closestPosition.distance} 公里`);
+                                document.getElementById("CountyName").innerText = closestPosition.name;
+                            } else {
+                                document.getElementById("CountyName").textContent = "無法找到最近的位置資料。";
+                            }
+                        });
+                    },
+                    (error) => {
+                        console.error("無法取得位置：", error);
+                        document.getElementById("station-info").textContent = "無法取得您的位置。";
+                    }
+                );
+            } else {
+                alert("您的瀏覽器不支援定位功能。");
+            }
+        };
+    </script>
+</body>
+
+</html>
